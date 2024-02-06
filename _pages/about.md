@@ -23,3 +23,5 @@ Hello! I am Sungwon Kim, and I am currently pursuing BS / MSE in Computer scienc
 
 I am currently in [Mark Dredze's](https://www.cs.jhu.edu/~mdredze/) lab, where I worked on RAG application on Tobacco Articles. I am also a Course Assistant for [NLP Self-Supervised Models](https://self-supervised.cs.jhu.edu/sp2024/).
 
+I am planning to add additional stuff soon.
+

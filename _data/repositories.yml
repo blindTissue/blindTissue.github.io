@@ -1,12 +1,8 @@
-# github_users:
-#   - torvalds
-#   - alshedivat
+github_users:
+  - blindTissue
 
-# github_repos:
-#   - alshedivat/al-folio
-#   - twbs/bootstrap
-#   - jekyll/jekyll
-#   - jquery/jquery
-#   - FortAwesome/Font-Awesome
-#   - jpswalsh/academicons
-#   - mathjax/MathJax
+
+github_repos:
+  - blindTissue/Hophacks
+  -blindTissue/NLP-Project
+

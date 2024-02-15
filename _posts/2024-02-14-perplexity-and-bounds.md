@@ -23,15 +23,15 @@ We can think of perplexity as wordwise uncertainty of the language model. Let's 
 
 Assume that a language model has a vocab size $V$. If the model guesses the next word uniformly at random, then the perplexity is $V$. This is because the probability of the next word is $1/V$ and hence the perplexity is 
 
-$$ppl(w_1, \ldots w_n) = (P(w_1) P(w_2 | w_1) \ldots P(w_n | w_{n-1} \ldots w_1))^{-\frac{1}{n}} = (\frac{1}{V}^n)^{-\frac{1}{n}} = V$$.
+$$ppl(w_1, \ldots w_n) = (P(w_1) P(w_2 | w_1) \ldots P(w_n | w_{n-1} \ldots w_1))^{-\frac{1}{n}} = (\frac{1}{V}^n)^{-\frac{1}{n}} = V$$
 
 If the model has memorized the word sequence, then it will assign probability 1 to the next word. In this case, the perplexity is
 
-$$ppl(w_1, \ldots w_n) = (P(w_1) P(w_2 | w_1) \ldots P(w_n | w_{n-1} \ldots w_1))^{-\frac{1}{n}} = (1^n)^{-\frac{1}{n}} = 1$$.
+$$ppl(w_1, \ldots w_n) = (P(w_1) P(w_2 | w_1) \ldots P(w_n | w_{n-1} \ldots w_1))^{-\frac{1}{n}} = (1^n)^{-\frac{1}{n}} = 1$$
 
 However, let's say that the model sees a new word in the sequence, let's say, at position $i$. Then we see that 
 
-$$ppl(w_1, \ldots w_n) = (p(w_1) \cdots p(w_i | \ldots) \cdots p(w_n | \ldots))^{-\frac{1}{n}} = 0^{-\frac{1}{n}} = \infty$$.
+$$ppl(w_1, \ldots w_n) = (p(w_1) \cdots p(w_i | \ldots) \cdots p(w_n | \ldots))^{-\frac{1}{n}} = 0^{-\frac{1}{n}} = \infty$$
 
 ### Bounds for Perplexity
 

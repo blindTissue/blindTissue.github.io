@@ -3,7 +3,7 @@ layout: post
 title: Bounds for Language Model Perplexity
 date: 2024-02-14 14:00:00
 description: What is perplexity in language modelling and the sensible bounds for it?
-tags:
+tags: machine-learning
 featured: true
 ---
 

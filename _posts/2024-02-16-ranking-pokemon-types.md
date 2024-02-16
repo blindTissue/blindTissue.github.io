@@ -11,7 +11,7 @@ A while back, I watched a video on [Pokemon type ranking](https://www.youtube.co
 
 ### Type Effectiveness
 
-[[{% include figure.liquid loading="eager" path="assets/img/Pokemon_Type_Chart.svg"}]]
+{% include figure.liquid loading="eager" path="assets/img/Pokemon_Type_Chart.svg" class="img-fluid rounded z-depth-1" %}
 
 Chart Source: Wikipedia
 
@@ -83,7 +83,7 @@ We can prove this by induction. We first see that iteration 0 satisfies this bou
 
 Now let's assume that iteration $t$ satisfies this bound. We will show that iteration $t+1$ satisfies this bound.
 
-Let $$t_1, t_2$$ be two types such that $$S_A(t_1, t_j) = S_A(t_2, t_j)$ for all $t_j \in T \setminus \{t_k\}$ where $S_A(t_1, t_j) \geq S_A(t_2, t_j)$$.
+Let $$t_1, t_2$$ be two types such that $$S_A(t_1, t_j) = S_A(t_2, t_j)$$ for all $$t_j \in T \setminus \{t_k\}$ where $S_A(t_1, t_j) \geq S_A(t_2, t_j)$$.
 
 Then we have that
 
@@ -103,7 +103,7 @@ We can prove the same for defense ratings.
 
 #### Proof of Bound 2
 
-We can prove this also by induction. We first see that iteration 0 satisfies this bound as $a_i^0, d_i^0 = 100$ for all $i$.
+We can prove this also by induction. We first see that iteration 0 satisfies this bound as $$a_i^0, d_i^0 = 100$$ for all $$i$$.
 
 
 

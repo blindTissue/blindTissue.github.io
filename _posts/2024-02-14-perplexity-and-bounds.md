@@ -50,7 +50,7 @@ $$ppl(w_1, \ldots w_n) = (P(w_1) P(w_2) \ldots P(w_n))^{-\frac{1}{n}} \sim ((P(v
 
 We know the lower bound to the following inequality using the AM-GM inequality.
 
-$$\frac{1}{V} \sum_{i=1}^V P(v_i) = \frac{1}{V} \leq \left(\prod_{i=1}^V P(v_i)\right)^{\frac{1}{V}}$$
+$$\frac{1}{V} \sum_{i=1}^V P(v_i) = \frac{1}{V} \geq \left(\prod_{i=1}^V P(v_i)\right)^{\frac{1}{V}}$$
 
 Thus we have that the lower bound of perplexity on this corpus is $V$. Furthermore, this perplexity is achieved if and only if $P(v_i) = \frac{1}{V}$ for all $i$ from AM-GM inequality.
 

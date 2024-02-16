@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ranking Pokemon Types
-date: 2024-02-14 14:00:00
+date: 2024-02-16 14:00:00
 description: Pokemon type ranking based on type effectiveness alone.
 tags: fun
 featured: true
@@ -26,14 +26,14 @@ Thus Pokemon effectiveness chart is not a zero-sum game. We cannot simply use th
 
 I wanted the rating system to follow easily understandable rules. Let's first define variables.
 
-$A$ is the set of attack ratings of types. $a_i \in A$ denotes the attack rating of type $i$. 
-$D$ is the set of defense ratings of types. $d_i \in D$ denotes the defense rating of type $i$.
+$$A$$ is the set of attack ratings of types. $$a_i \in A$$ denotes the attack rating of type $$i$$. 
+$$D$$ is the set of defense ratings of types. $$d_i \in D$$ denotes the defense rating of type $$i$$.
 
 Pokemon is not a zero sum game. Thus I believed that calculating seperate attack and defense ratings would be more meaningful.
 
 Let's talk about the bounds now.
 
-let's hypothetically say that there are two types $i,j$ such that their type effectiveness is same except for one type. Let's say that type $i$ is super effective against type $k$ and type $j$ is less effective against type $k$. Then we $a_i \geq a_j$. 
+let's hypothetically say that there are two types $i,j$ such that their type effectiveness is same except for one type. Let's say that type $i$ is super effective against type $k$ and type $j$ is less effective against type $k$. Then we $$a_i \geq a_j$$. 
 
 Another bound is inspired from the rating system. If a player wins against a strong player, then the player's rating increment is higher than if the player wins against a weak player. In this case, If an attacking type is super effective against a strong defending type, then the attacking type should be rated higher than if it was super effective against a weak defending type. Similarly, if a defending type is resistant to a strong attacking type, then the defending type should be rated higher than if it was resistant to a weak attacking type.
 
@@ -42,14 +42,14 @@ Another bound is inspired from the rating system. If a player wins against a str
 Since we have bounds, lets devise a rating system that satisfies these bounds.
 
 I came up with an iterative approach of this. First let's define another function 
-$S_A: t_1 \times t_2 \rightarrow \mathbb{R}$. The function takes in two types, $t_1$ being the attacking type and $t_2$ being the defending type. The function returns the "score" $t_1$ gets when attacking $t_2$.
+$$S_A: t_1 \times t_2 \rightarrow \mathbb{R}$$. The function takes in two types, $t_1$ being the attacking type and $$t_2$$ being the defending type. The function returns the "score" $$t_1$$ gets when attacking $$t_2$$.
 
-Similarly, we can define $S_D: t_1 \times t_2 \rightarrow \mathbb{R}$ as the score $t_1$ gets when defending against $t_2$. 
+Similarly, we can define $$S_D: t_1 \times t_2 \rightarrow \mathbb{R}$$ as the score $$t_1$$ gets when defending against $$t_2$$. 
 
 
-One approach of definition $S_A$ would be to use the type effectiveness chart. For example, $S_A(t_1, t_2)$ would be 2 if $t_1$ is super effective against $t_2$, 1 if $t_1$ is normally effective against $t_2$, and so on.
+One approach of definition $S_A$ would be to use the type effectiveness chart. For example, $$S_A(t_1, t_2)$$ would be 2 if $$t_1$$ is super effective against $$t_2$$, 1 if $$t_1$$ is normally effective against $$t_2$$, and so on.
 
-However, defining $$S_D$$ is not as straightforward. One naive approach would be to take the inverse of $S_A$. However,  $$S_A = 0$$ exists, and would be undefined in this case. Let's put the bounds for $$S$$ to be non-negative and follow order ranking of types. We will discuss this further down the road for now 
+However, defining $$S_D$$ is not as straightforward. One naive approach would be to take the inverse of $$S_A$$. However,  $$S_A = 0$$ exists, and would be undefined in this case. Let's put the bounds for $$S$$ to be non-negative and follow order ranking of types. We will discuss this further down the road for now 
 
 This is the iterative steps I came up with:
 
@@ -65,15 +65,15 @@ $d_i^{t + 1} = \sum_{j \in T} S_D(t_i, t_j) \cdot a_j^t$ then normalize the valu
 Let's now formally define the bounds listed above.
 
 #### Bound 1
-Let $t_1, t_2$ be two types such that $S_A(t_1, t_j) = S_A(t_2, t_j)$ for all $t_j \in T \setminus \{t_k\}$ where $S_A(t_1, t_j) \geq S_A(t_2, t_j)$ Then $a_i \geq a_j$.
+Let $$t_1, t_2$$ be two types such that $$S_A(t_1, t_j) = S_A(t_2, t_j)$$ for all $$t_j \in T \setminus \{t_k\}$$ where $$S_A(t_1, t_j) \geq S_A(t_2, t_j)$$ Then $$a_i \geq a_j$$.
 
 Similarly
-Let $t_1, t_2$ be two types such that $S_D(t_1, t_j) = S_D(t_2, t_j)$ for all $t_j \in T \setminus \{t_k\}$ where $S_D(t_1, t_j) \geq S_D(t_2, t_j)$ Then $d_i \geq d_j$.
+Let $$t_1, t_2$$ be two types such that $$S_D(t_1, t_j) = S_D(t_2, t_j)$$ for all $$t_j \in T \setminus \{t_k\}$$ where $$S_D(t_1, t_j) \geq S_D(t_2, t_j)$$ Then $$d_i \geq d_j$$.
 
 #### Bound 2
-Let $t_1, t_2$ be two types such that $S_A(t_1, t_j) = S_A(t_2, t_j)$ for all $t_j \in T \setminus \{t_3, t_4\}$ where $S_A(t_1, t_3) \geq S_A(t_2, t_3)$ and $S_A(t_1, t_4) \geq S_A(t_2, t_4)$, $S_A(t_1, t_3) = S_A(t_2, t_4)$, $S_A(t_1, t_4) = S_A(t_2, t_3)$, $d_3 \geq d_4$ Then $a_i \geq a_j$.
+Let $$t_1, t_2$$ be two types such that $$S_A(t_1, t_j) = S_A(t_2, t_j)$$ for all $$t_j \in T \setminus \{t_3, t_4\}$$ where $$S_A(t_1, t_3) \geq S_A(t_2, t_3)$$ and $$S_A(t_1, t_4) \geq S_A(t_2, t_4)$$, $$S_A(t_1, t_3) = S_A(t_2, t_4)$$, $$S_A(t_1, t_4) = S_A(t_2, t_3)$$, $$d_3 \geq d_4$$ Then $$a_i \geq a_j$$.
 
-And similar for $S_D$. 
+And similar for $$S_D$$. 
 
 Let's now prove that the iterative approach satisfies these bounds.
 
@@ -103,7 +103,33 @@ We can prove the same for defense ratings.
 
 #### Proof of Bound 2
 
-We can prove this also by induction. We first see that iteration 0 satisfies this bound as $$a_i^0, d_i^0 = 100$$ for all $$i$$.
+We can prove this also by induction. We first see that iteration 0 satisfies this bound as $$a_i^0, d_i^0 = 100$$ for all $$i$$ and thus satisfies the bound.
+
+Now let's assume that iteration $$t$$ satisfies this bound. We will show that iteration $$t+1$$ satisfies this bound.
+
+Let $$t_1, t_2$$ be two types such that $$S_A(t_1, t_j) = S_A(t_2, t_j)$$ for all $$t_j \in T \setminus \{t_3, t_4\}$$ where $$S_A(t_1, t_3) \geq S_A(t_2, t_3)$$ and $$S_A(t_1, t_4) \geq S_A(t_2, t_4)$$, $$S_A(t_1, t_3) = S_A(t_2, t_4)$$, $$S_A(t_1, t_4) = S_A(t_2, t_3)$$, $$d_3 \geq d_4$$.
+
+Then we have that
+
+$$
+\begin{aligned}
+a_1^{t+1} &= \sum_{j \in T} S_A(t_1, t_j) \cdot d_j^t\\
+&= S_A(t_1, t_3) \cdot d_3^t + S_A(t_1, t_4) \cdot d_4^t + \sum_{j \in T \setminus \{t_3, t_4\}} S_A(t_1, t_j) \cdot d_j^t\\
+&\geq S_A(t_2, t_3) \cdot d_3^t + S_A(t_2, t_4) \cdot d_4^t + \sum_{j \in T \setminus \{t_3, t_4\}} S_A(t_1, t_j) \cdot d_j^t\\
+&= \sum_{j \in T} S_A(t_2, t_j) \cdot d_j^t\\
+&= a_2^{t+1}
+\end{aligned}
+$$
+
+Thus we have that $$a_1^{t+1} \geq a_2^{t+1}$$ and we are done.
+
+### Talk on bounds of function S
+
+So far, we have been hand wavy about the function $$S$$. We only set the bounds so that the image of $S$ is non-negative and follows the order of rankingo of types. 
+
+Now let's look at more explainable meaning of $$S$$. Let's say that we gave $$S_A = 1$$ for not very effective (0.5 damage), $$S_A = 2$$ for normally effective (1 damage), $$S_A = 3$$ for super effective (2 damage). 
+
+Let's now look at a toy example were there are three types, $$x,y,z$$ and say that 
 
 
 

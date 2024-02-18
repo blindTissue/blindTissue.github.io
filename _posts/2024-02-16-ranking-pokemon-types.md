@@ -126,13 +126,86 @@ Thus we have that $$a_1^{t+1} \geq a_2^{t+1}$$ and we are done.
 
 ### Talk on bounds of function S
 
-So far, we have been hand wavy about the function $$S$$. We only set the bounds so that the image of $S$ is non-negative and follows the order of ranking of types. 
+So far, we have been hand wavy about the function $$S$$. We set the bounds so that the image of $$S$$ is non-negative and follows the order of ranking of types. Higher output of $$S$$ meant that the type got more "points" for attacking or defending.
 
-Now let's look at more explainable meaning of $$S$$. Let's say that we gave $$S_A = 1$$ for not very effective (0.5 damage), $$S_A = 2$$ for normally effective (1 damage), $$S_A = 3$$ for super effective (2 damage). 
+To make function easier to define let's divide function $$S$$ into two. Let function $$E: T \times T \rightarrow \mathbb{R}$$ be the effectiveness multiplier according to the effectiveness chart and $$M_A: T \times T \rightarrow \mathbb{R}$$ be a function that sets the "score factor" for effectiveness on the attacking side and $$M_D: T \times T \rightarrow \mathbb{R}$$ be a function that sets the "score factor" for effectiveness on the defending side. $$S$$ can be defined as the composition of these two functions. $$S = M \circ E$$.
 
-Let's now look at a toy example were there are three types, $$x,y,z$$ and say that 
+Since for the single type, there are only four effectiveness multipliers. $$[0, 0.5, 1, 2]$$. We only need to define $$M_A$$ and $$M_D$$ for these four cases. Let's denote $$M$$ as $$[a,b,c,d]$$ where the type effectiveness score for $$0$$ is $$a$$, for $$0.5$$ is $$b$$, for $$1$$ is $$c$$, and for $$2$$ is $$d$$.
+
+For starter, let $$M_A : [1,2,3,4]$$ and look at a toy example were there are three types, $$x,y,z$$ Also, assume that they all have a initial defense rating of 100. 
 
 
+| Effectiveness |  X  |  Y  |  Z  |
+|---------------|-----|-----|-----|
+| X             |  1  |  1  |  1  |
+| Y             | 0.5 |  1  |  2  |
+| Z             |  0  |  2  |  2  |
 
+For the first iteration of unnormalized attack, we see 
 
+$$\alpha_X^1 = 3 \cdot 100 + 3 \cdot 100 + 3 \cdot 100 = 900$$
+$$\alpha_Y^1 = 2 \cdot 100 + 3 \cdot 100 + 4 \cdot 100 = 900$$ 
+$$\alpha_Z^1 = 1 \cdot 100 + 4 \cdot 100 + 4 \cdot 100 = 900$$
+
+We see that each type after one update has the same attack rating. From comparing $$\alpha_X^1$$ and $$\alpha_Y^1$$, we see that the above scores set the score delta of super effectiveness and not very effectiveness to be the same.From $$alpha_X^1$$ and $$\alpha_Z^1$$, we see that having non-effective attack deficit is the same as having the increment of two super effective attacks. In other words, we can easily be compared by looking at the difference between score of danagae multiplier one and other value to determine how $$M$$ affects the ratings.
+
+By subtracting the list with score for damage multiplier one, we see that $$[-2, -1, 0, 1]$$. We can interpret this having two not very effective attacks is same as having one non-effective attack. We also see that score increment by having one super effective attack is same as the score decrement by having one not very effective attack.
+
+Not only can we change the "score factor", we got a easily explainable score factor. If a person decided that five not very effective attcak types is equal to four super effective attack types, one can modify the score factor so that $$M_A : [-x, -4, 0, 5] + x$$.
+
+### Results
+
+With $$S_A = \{0: 0, 0.25 : 1, 0.5 : 2, 1: 3, 2: 4, 4: 5 \}$$ and $$S_D = \{0: 5, 0.25 : 4, 0.5 : 3, 1: 2, 2: 1, 4: 0\}$$ We get the following ratings
+
+#### Attack Ratings
+
+markdown
+Copy code
+| Type     | Offensive Rating |
+|----------|------------------|
+| Rock     | 105.430          |
+| Ground   | 104.483          |
+| Water    | 104.122          |
+| Fire     | 104.076          |
+| Ice      | 103.692          |
+| Flying   | 103.450          |
+| Fairy    | 103.411          |
+| Dark     | 102.145          |
+| Steel    | 101.347          |
+| Ghost    | 100.200          |
+| Psychic  | 97.940           |
+| Fighting | 97.740           |
+| Dragon   | 97.498           |
+| Electric | 96.592           |
+| Grass    | 95.932           |
+| Bug      | 95.287           |
+| Normal   | 93.581           |
+| Poison   | 93.074           |
+
+#### Defense Ratings
+
+| Type     | Defensive Rating |
+|----------|------------------|
+| Steel    | 120.872          |
+| Ghost    | 110.016          |
+| Fairy    | 105.606          |
+| Flying   | 103.053          |
+| Fire     | 102.868          |
+| Poison   | 102.691          |
+| Water    | 101.044          |
+| Normal   | 100.571          |
+| Dark     | 100.489          |
+| Electric | 100.414          |
+| Ground   | 100.087          |
+| Dragon   | 97.749           |
+| Fighting | 95.155           |
+| Bug      | 94.815           |
+| Grass    | 92.603           |
+| Psychic  | 92.510           |
+| Rock     | 92.312           |
+| Ice      | 87.143           |
+
+You can check out the code [here](https://github.com/blindTissue/Pokemon_Type_Ranking).
+
+Coming Soon: System of Linear Equations approach and Dual typing ranking! 
 

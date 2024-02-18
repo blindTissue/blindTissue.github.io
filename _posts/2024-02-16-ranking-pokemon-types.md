@@ -144,7 +144,9 @@ For starter, let $$M_A : [1,2,3,4]$$ and look at a toy example were there are th
 For the first iteration of unnormalized attack, we see 
 
 $$\alpha_X^1 = 3 \cdot 100 + 3 \cdot 100 + 3 \cdot 100 = 900$$
+
 $$\alpha_Y^1 = 2 \cdot 100 + 3 \cdot 100 + 4 \cdot 100 = 900$$ 
+
 $$\alpha_Z^1 = 1 \cdot 100 + 4 \cdot 100 + 4 \cdot 100 = 900$$
 
 We see that each type after one update has the same attack rating. From comparing $$\alpha_X^1$$ and $$\alpha_Y^1$$, we see that the above scores set the score delta of super effectiveness and not very effectiveness to be the same.From $$alpha_X^1$$ and $$\alpha_Z^1$$, we see that having non-effective attack deficit is the same as having the increment of two super effective attacks. In other words, we can easily be compared by looking at the difference between score of danagae multiplier one and other value to determine how $$M$$ affects the ratings.
@@ -155,7 +157,9 @@ Not only can we change the "score factor", we got a easily explainable score fac
 
 ### Results
 
-With $$S_A = \{0: 0, 0.25 : 1, 0.5 : 2, 1: 3, 2: 4, 4: 5 \}$$ and $$S_D = \{0: 5, 0.25 : 4, 0.5 : 3, 1: 2, 2: 1, 4: 0\}$$ We get the following ratings
+With $$S_A = \{0: 0, 0.25 : 1, 0.5 : 2, 1: 3, 2: 4, 4: 5 \}$$ and $$S_D = \{0: 5, 0.25 : 4, 0.5 : 3, 1: 2, 2: 1, 4: 0\}$$ 
+
+We get the following ratings
 
 #### Attack Ratings
 

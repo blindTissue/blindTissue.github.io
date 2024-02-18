@@ -7,7 +7,7 @@ tags: fun
 featured: true
 ---
 
-A while back, I watched a video on [Pokemon type ranking](https://www.youtube.com/watch?v=_SCz1fwhnJg&ab_channel=WolfeyVGC) by Wolfey, the former world champion. The ranking was comprehensive, including type effectiveness, abilities, move distribution, and so on. However, I was curious to see how the ranking would look like if we only considered type effectiveness.
+A while back, I watched a video on [Pokemon type ranking](https://www.youtube.com/watch?v=_SCz1fwhnJg&ab_channel=WolfeyVGC) by Wolfey, a former world champion. The ranking was comprehensive, including type effectiveness, abilities, move distribution, and more. I was curious to see how the ranking would look like if we only considered type effectiveness.
 
 ### Type Effectiveness
 
@@ -15,11 +15,11 @@ A while back, I watched a video on [Pokemon type ranking](https://www.youtube.co
 
 Chart Source: Wikipedia
 
-When tackling this problem, I thought of a chess rating system. We can see each types as "players" and the effectiveness as the result of a match. We can rank each using the elo rating system used in chess.
+The problem setup seems similar to chess rating system. We can see each types as "players" and the effectiveness as the result of a match. We can rank each using the elo rating system used in chess.
 
 However, the type effectiveness chart is not inversely symmetric. For example, fighting type is not very effective against bug type but bug type is also not very effective against fighting type. 
 
-Thus Pokemon effectiveness chart is not a zero-sum game. We cannot simply use the elo rating system for this.
+Thus Pokemon effectiveness chart is not a zero-sum game. We cannot simply use the elo rating system.
 
 ### Bounds
 
@@ -29,11 +29,13 @@ I wanted the rating system to follow easily understandable rules. Let's first de
 $$A$$ is the set of attack ratings of types. $$a_i \in A$$ denotes the attack rating of type $$i$$. 
 $$D$$ is the set of defense ratings of types. $$d_i \in D$$ denotes the defense rating of type $$i$$.
 
+Also, let $$T$$ be the set of types.
+
 Pokemon is not a zero sum game. Thus I believed that calculating seperate attack and defense ratings would be more meaningful.
 
 Let's talk about the bounds now.
 
-let's hypothetically say that there are two types $i,j$ such that their type effectiveness is same except for one type. Let's say that type $i$ is super effective against type $k$ and type $j$ is less effective against type $k$. Then we $$a_i \geq a_j$$. 
+let's hypothetically say that there are two types $$i,j$$ such that their type effectiveness is same except for one type. Let's say that type $$i$$ is super effective against type $$k$$ and type $$j$$ is less effective against type $$k$$. Then we $$a_i \geq a_j$$. 
 
 Another bound is inspired from the rating system. If a player wins against a strong player, then the player's rating increment is higher than if the player wins against a weak player. In this case, If an attacking type is super effective against a strong defending type, then the attacking type should be rated higher than if it was super effective against a weak defending type. Similarly, if a defending type is resistant to a strong attacking type, then the defending type should be rated higher than if it was resistant to a weak attacking type.
 
@@ -42,10 +44,9 @@ Another bound is inspired from the rating system. If a player wins against a str
 Since we have bounds, lets devise a rating system that satisfies these bounds.
 
 I came up with an iterative approach of this. First let's define another function 
-$$S_A: t_1 \times t_2 \rightarrow \mathbb{R}$$. The function takes in two types, $t_1$ being the attacking type and $$t_2$$ being the defending type. The function returns the "score" $$t_1$$ gets when attacking $$t_2$$.
+$$S_A: T \times T \rightarrow \mathbb{R}$$. The function takes in two types, the first argument being the attacking type and the second, the defending type. The function returns the "score" the attacking type gets when attacking the defending type.
 
-Similarly, we can define $$S_D: t_1 \times t_2 \rightarrow \mathbb{R}$$ as the score $$t_1$$ gets when defending against $$t_2$$. 
-
+Similarly, we can define $$S_D: T \times T \rightarrow \mathbb{R}$$ as the score the defending type gets when defending against the attacking type.
 
 One approach of definition $S_A$ would be to use the type effectiveness chart. For example, $$S_A(t_1, t_2)$$ would be 2 if $$t_1$$ is super effective against $$t_2$$, 1 if $$t_1$$ is normally effective against $$t_2$$, and so on.
 
@@ -55,10 +56,10 @@ This is the iterative steps I came up with:
 
 1. Set all $a_i^0 = 100$ and $d_i^0 = 100$ for all $i$.
 2. Update $a_i$ by the following formula:
-$a_i^{t + 1} = \sum_{j \in T} S_A(t_i, t_j) \cdot d_j^t$ then normalize the values such that $\frac{1}{|T|}\sum_{i \in T} a_i^{t+1} = 100$.
+$$a_i^{t + 1} = \sum_{j \in T} S_A(t_i, t_j) \cdot d_j^t$$ then normalize the values such that $$\frac{1}{|T|}\sum_{i \in T} a_i^{t+1} = 100$$.
 3. Update $d_i$ by the following formula:
-$d_i^{t + 1} = \sum_{j \in T} S_D(t_i, t_j) \cdot a_j^t$ then normalize the values such that $\frac{1}{|T|}\sum_{i \in T} d_i^{t+1} = 100$.
-4. Repeat steps 2-4 until convergence.
+$$d_i^{t + 1} = \sum_{j \in T} S_D(t_i, t_j) \cdot a_j^t$$ then normalize the values such that $$\frac{1}{|T|}\sum_{i \in T} d_i^{t+1} = 100$$.
+4. Repeat steps 2-3 until convergence.
 
 ### Does this satisfy the bounds?
 
@@ -125,7 +126,7 @@ Thus we have that $$a_1^{t+1} \geq a_2^{t+1}$$ and we are done.
 
 ### Talk on bounds of function S
 
-So far, we have been hand wavy about the function $$S$$. We only set the bounds so that the image of $S$ is non-negative and follows the order of rankingo of types. 
+So far, we have been hand wavy about the function $$S$$. We only set the bounds so that the image of $S$ is non-negative and follows the order of ranking of types. 
 
 Now let's look at more explainable meaning of $$S$$. Let's say that we gave $$S_A = 1$$ for not very effective (0.5 damage), $$S_A = 2$$ for normally effective (1 damage), $$S_A = 3$$ for super effective (2 damage). 
 

@@ -159,8 +159,7 @@ With $$S_A = \{0: 0, 0.25 : 1, 0.5 : 2, 1: 3, 2: 4, 4: 5 \}$$ and $$S_D = \{0: 5
 
 #### Attack Ratings
 
-markdown
-Copy code
+
 | Type     | Offensive Rating |
 |----------|------------------|
 | Rock     | 105.430          |

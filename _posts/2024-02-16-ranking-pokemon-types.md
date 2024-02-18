@@ -209,3 +209,9 @@ You can check out the code [here](https://github.com/blindTissue/Pokemon_Type_Ra
 
 Coming Soon: System of Linear Equations approach and Dual typing ranking! 
 
+
+
+
+### Timeline
+2024-02-16: Started writing the post
+2024-02-18: Finished completing draft.

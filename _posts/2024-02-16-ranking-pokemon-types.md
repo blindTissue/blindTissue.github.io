@@ -3,7 +3,7 @@ layout: post
 title: Ranking Pokemon Types
 date: 2024-02-16 14:00:00
 description: Pokemon type ranking based on type effectiveness alone.
-tags: fun
+tags: for-fun math
 featured: true
 ---
 
@@ -157,7 +157,10 @@ Not only can we change the "score factor", we got a easily explainable score fac
 
 ### Results
 
-With $$S_A = \{0: 0, 0.25 : 1, 0.5 : 2, 1: 3, 2: 4, 4: 5 \}$$ and $$S_D = \{0: 5, 0.25 : 4, 0.5 : 3, 1: 2, 2: 1, 4: 0\}$$ 
+With 
+$$S_A = \{0: 0, 0.25 : 1, 0.5 : 2, 1: 3, 2: 4, 4: 5 \}$$
+
+$S_D = \{0: 5, 0.25 : 4, 0.5 : 3, 1: 2, 2: 1, 4: 0\}$$ 
 
 We get the following ratings
 

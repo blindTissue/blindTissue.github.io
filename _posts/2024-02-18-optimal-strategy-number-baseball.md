@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Strategy for Number Baseball
-date: 2024-02-16 14:00:00
+date: 2024-02-18 14:00:00
 description: Is there an optimal strategy for the game Number Baseball?
 tags: for-fun math in-progress
 featured: false

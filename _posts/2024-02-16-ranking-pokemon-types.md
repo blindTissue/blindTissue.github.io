@@ -80,7 +80,7 @@ Let's now prove that the iterative approach satisfies these bounds.
 
 #### Proof of Bound 1
 
-We can prove this by induction. We first see that iteration 0 satisfies this bound as $a_i^0, d_i^0 = 100$ for all $i$.
+We can prove this by induction. We first see that iteration 0 satisfies this bound as $$a_i^0, d_i^0 = 100$$ for all $$i$$.
 
 Now let's assume that iteration $t$ satisfies this bound. We will show that iteration $t+1$ satisfies this bound.
 
@@ -98,7 +98,7 @@ a_1^{t+1} &= \sum_{j \in T} S_A(t_1, t_j) \cdot d_j^t\\
 \end{aligned}
 $$
 
-Thus we have that $a_1^{t+1} \geq a_2^{t+1}$ and we are done.
+Thus we have that $$a_1^{t+1} \geq a_2^{t+1}$$ and we are done.
 
 We can prove the same for defense ratings.
 

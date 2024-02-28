@@ -160,5 +160,5 @@ Next up: Generalization to $$k,l$$ tree and more.
 
 ### Update Logs
 
-Fen 27, 2024: Initial post
-Fen28, 2024: Minor typo fix
+- Feb 27, 2024: Initial post
+- Feb 28, 2024: Minor typo fix

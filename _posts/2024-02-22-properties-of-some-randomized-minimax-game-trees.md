@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Properties of Turn Based Minimax Game Trees
+title: Properties of Turn Based Minimax Game Trees Part 1
 date: 2024-02-27 14:00:00
 description: Part 1, Zero-sum game on a complete binary tree
 tags: for-fun math not-rigorous
@@ -55,7 +55,7 @@ Now, the first player tries to maximize the value of the node.
 1  0 1  0
 ```
 
-The value of the root node is -1. This is a winning game for the second player. 
+The value of the root node is 0. This is a winning game for the second player. 
 
 We see that if the leaf nodes are chosen, the outcome of the game is deterministic. Also, minimax algorithm starts from the leaf nodes. For formulation of problem, fixing the last player to move is a good choice.
 
@@ -137,7 +137,7 @@ $$\frac{p_{k + 2}}{p_k} = \frac{1 - (1 - p_k^2)^2}{p_k} = \frac{1 - 1 + 2p_k^2 -
 We can show that $$2p_k - p_k^3$$ goes to zero as $k$ increases. Thus the rate of convergence is larger than exponential.
 
 Corollary
-: Let $$p_0 < \frac{-1 + \sqrt{5}}{2}$$. Then there does not exist a $c \in R_+$ such that for all $$n \in \mathbb{N}$$, $$p_{2n} > \frac{1}{c}^n$$.
+: Let $$p_0 < \frac{-1 + \sqrt{5}}{2}$$. Then there does not exist a $$c \in R_+$$ such that for all $$n \in \mathbb{N}$$, $$p_{2n} > \frac{1}{c}^n$$.
 
 
 The convergence speed is pretty fast!
@@ -146,10 +146,10 @@ The convergence speed is pretty fast!
 
 Until now, we have only seen a binary probability distribution: the leaf values were either $$0$$ or $$1$$. We can show that similar probability holds for any probability distribution on the leaves.
 
-Now the definition of "winning" is different. 
+Now, we are more interested in the result of the minimax algorithm.
 
 Proposition
-: Let a complete binary tree of depth of depth $$n$$ with leaf nodes having probability distribution $$p(x)$$. Then as $$n$$ goes to infinity, Result of the minimax algorithm is $p(k)$$ where $$\int_{-\infty} ^ k p(x) dx = \frac{-1 + \sqrt{5}}{2}$$.
+: Let a complete binary tree of depth of depth $$n$$ with leaf nodes having probability distribution $$p(x)$$. Then as $$n$$ goes to infinity, Result of the minimax algorithm is $$p(k)$$ where $$\int_{-\infty} ^ k p(x) dx = \frac{-1 + \sqrt{5}}{2}$$.
 
 Proof
 : We can think of this problem by binary partition. Let's say that we partition the distribution above with $$a$$ where $$\int_{-\infty} ^a p(x) dx = \frac{1}{2}$$. We would have two partitions. Let's call them $$V_1, V_2$$. The probability that the minimax ends with element in partition $$V_1$$ is the probability that the outcome is $$0$$ when $$p_0 = 0.5$$ in the previous problem. From above, we showed that the probability of ending with element in partition $$V_1$$ goes to 0. In fact, we see that if the partition is not set at $$p(k)$$ where $$\int_{-\infty} ^ k p(x) dx = \frac{-1 + \sqrt{5}}{2}$$, then one of probability of elements ending up in partition $$V_k$$ goes to $$0$$. Thus we can show that the minimax algorithm converges to the partition where $$\int_{-\infty} ^ k p(x) dx = \frac{-1 + \sqrt{5}}{2}$$.
@@ -157,3 +157,8 @@ Proof
 I personally thought this was cool.
 
 Next up: Generalization to $$k,l$$ tree and more.
+
+### Update Logs
+
+Fen 27, 2024: Initial post
+Fen28, 2024: Minor typo fix

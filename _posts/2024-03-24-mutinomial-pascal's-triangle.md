@@ -7,11 +7,6 @@ tags: for-fun math not-rigorous
 featured: true
 ---
 
-
-
-
-
-
 Pascal's triangle is a smart arrangement of binomial coefficients. Among many qualities, two of them are:
 
 1. The value of the binomial coefficient is the sum of the two binomial coefficients above it.

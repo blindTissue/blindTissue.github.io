@@ -96,9 +96,78 @@ $$||\vec{a} - \vec{b}||^2 = ||\vec{a}||^2 + ||\vec{b}||^2 - 2||\vec{a}|| ||\vec{
 
 where $$\theta$$ is the angle between $$\vec{a}$$ and $$\vec{b}$$. 
 
-Also, since $$cos(\theta) = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}| |\vec{b}|}$$, we can simplify the above equation to
+Also, since 
+$$\cos(\theta) = \frac{\vec{a} \cdot \vec{b}}{||\vec{a}|| ||\vec{b}||}$$
+ we can simplify the above equation to
 
 $$1 = 2 - 2(1,0) \cdot \vec{b}$$
 
 
-and that $\vec{b} = (\frac{1}{2}, \pm \frac{\sqrt{3}}{2})$. Thus, the only possible arrangement is an equilateral triangle.
+and that $$\vec{b} = (\frac{1}{2}, \pm \frac{\sqrt{3}}{2})$$. Thus, the only possible arrangement is an equilateral triangle.
+
+We will use generalized version of this property to explore arrangement of multinomial coefficients.
+
+### Intuition on the Multinomial Triangle (Ternary Coefficients)
+
+I used to wonder why we werent told about Pascal's triangle for multinomial coefficients. If an equalateral triangle perfectly arranges binomial coefficients, then what about ternary coefficients?
+
+I tried to draw the equivalent of ternary coefficients on a paper, however, I coudln't make a good arrangment in two dimension. I noticed that the number of coefficients of $$(a + b + c)^n$$ is same as sum of the number of coefficieints of $$(a + b)^0$$ to $$(a + b)^n$$. That is when I noticed the following was possible.
+
+First row $$(a + b+ c)^0$$
+$$
+\begin{array}{c}
+1 \\
+\end{array}
+$$
+
+Second row $$(a + b + c)^1$$
+$$
+\begin{array}{c}
+1 \\
+1 \quad 1 \\
+\end{array}
+$$
+
+Third row $$(a + b + c)^2$$
+$$
+\begin{array}{c}
+1 \\
+2 \quad 2 \\
+1 \quad 2 \quad 1 \\
+\end{array}
+$$
+
+Fourth row $$(a + b + c)^3$$
+$$
+\begin{array}{c}
+1 \\
+3 \quad 3 \\
+3 \quad 6 \quad 3 \\
+1 \quad 3 \quad 3 \quad 1 \\
+\end{array}
+$$
+
+We can see that the coefficients of $$(a + b + c)^n$$ is arranged in a triangle. We could stack these triangles to form a tetrahedron. Also, there is a generalizable property.
+
+Prop
+: The number of coefficients in $$(x_1 + x_2 + \cdots x_n)^k$$ is equal to sum of number of coefficients in $$(x_1 + x_2 + \cdots x_{n-1})^0$$ to $$(x_1 + x_2 + \cdots x_{n-1})^k$$
+
+Proof
+: We can prove this by induction.(That was in fact, my fist proof of this problem). However, it is really messy and not fun. Instead, there is a more intuitive proof.
+
+We can think of each coefficient as ways to divide $$k$$ elements into $$n$$ groups. We can divide the cases depending on the number of elements that are put in the last group. If we put $$i$$ elements in the last group, then we have $$k-i$$ elements to divide into $$n-1$$ groups. This corresponds to the number of coefficients in $$(x_1 + x_2 \cdots x_{n-1})^{k-i}$$. Thus, the total number of coefficients is the sum of the number of coefficients in $$(x_1 + x_2 + \cdots x_{n-1})^0$$ to $$(x_1 + x_2 + \cdots x_{n-1})^k$$.
+
+Thus, we see that one possible arrangement of n-nomial coefficients is by stacking the previous (n-1)-nomial coefficient arrangement.
+
+Let's return to the ternary coefficients. Again, we want to preserve the property that the value of a ternary coefficient is the sum of the three coefficients above it. That is 
+
+$$\binom{n}{a, b, c} = \binom{n-1}{a-1, b, c} + \binom{n-1}{a, b-1, c} + \binom{n-1}{a, b, c-1}$$
+
+In fact, let's prove a more general property.
+
+Prop
+: $$\binom{n}{a_1, a_2, \ldots, a_k} = \sum_{i=1}^k \binom{n-1}{a_1, \ldots, a_i - 1, \ldots, a_k}$$
+
+Proof
+: Again, there exists a messy proof and an intuitive proof. Let's use the latter. We see that $$\binom{n}{a_1, a_2, \ldots, a_k}$$ is the number of ways to divide $$n$$ elements into $$k$$ groups with $$a_i$$ elements in the ith group. Let's choose the first element and divide the cases depending on which group it goes to. If it goes to the ith group, then we have $$n-1$$ elements to divide into $$k$$ groups with $$a_i - 1$$ elements in the ith group. This corresponds to the value of $$\binom{n-1}{a_1, \ldots, a_i - 1, \ldots, a_k}$$.
+

@@ -160,7 +160,7 @@ Not only can we change the "score factor", we got a easily explainable score fac
 With 
 $$S_A = \{0: 0, 0.25 : 1, 0.5 : 2, 1: 3, 2: 4, 4: 5 \}$$
 
-$S_D = \{0: 5, 0.25 : 4, 0.5 : 3, 1: 2, 2: 1, 4: 0\}$$ 
+$$S_D = \{0: 5, 0.25 : 4, 0.5 : 3, 1: 2, 2: 1, 4: 0\}$$ 
 
 We get the following ratings
 

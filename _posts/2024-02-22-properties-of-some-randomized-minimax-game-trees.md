@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Properties of Turn Based Minimax Game Trees Part 1
+title: Convergence of Minimax complete Binary Tree
 date: 2024-02-27 14:00:00
 description: Part 1, Zero-sum game on a complete binary tree
 tags: for-fun math not-rigorous

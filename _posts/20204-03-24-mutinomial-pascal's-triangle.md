@@ -5,8 +5,6 @@ date: 2024-03-24 14:00:00
 description: Pascal's triangle for multinomial coefficients
 tags: for-fun math not-rigorous
 featured: true
-header-includes:
-   - \usepackage{amsmath}
 ---
 
 

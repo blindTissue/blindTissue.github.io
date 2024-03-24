@@ -71,7 +71,11 @@ $$
 
 let's define $$\vec{a}$$ and $$\vec{b}$$ as vectors from the top of the triangle $$\color{Red}\boldsymbol{1}$$ to $${\color{Red}\boldsymbol{1}}a$$ and $${\color{Red}\boldsymbol{1}}b$$ respectively. we see that the coefficients of $$a^nb^m$$ is located at $$n\vec{a} + m\vec{b}$$. 
 
-We first see that the distance between the "adjacent" coefficients are the same. Let's focus on $$3a^2b$$. the distance between its six neighbors can be written as $$||\vec{a}||, ||\vec{b}||, ||\vec{a} - \vec{b}||, ||\vec{-a}||, ||\vec{-b}||, ||\vec{b} - \vec{a}||$$. We see that all of these distances are the same, to simplify,
+We first see that the distance between the "adjacent" coefficients are the same. Let's focus on $$3a^2b$$. the distance between its six neighbors can be written as 
+
+$$||\vec{a}||, ||\vec{b}||, ||\vec{a} - \vec{b}||, ||\vec{-a}||, ||\vec{-b}||, ||\vec{b} - \vec{a}||$$
+
+ We see that all of these distances are the same, to simplify,
 
 $$||\vec{a}|| = ||\vec{b}|| = ||\vec{a} - \vec{b}||$$
 
@@ -84,13 +88,15 @@ Prop
 is an equilateral triangle, in other words, $$||\vec{a}|| = ||\vec{b}|| = ||\vec{a} - \vec{b}||$$
 
 Proof
-: Since, $$||\vec{a}|| = ||\vec{b}||$$, let's say that $$\vec{a}, \vec{b}$$ are unit vectors. Furthermore, let's fix $$\vec{a} = (1,0)$$. Then, by the second cosine law, we have 
+: Since, 
+$$||\vec{a}|| = ||\vec{b}||$$, 
+let's say that $$\vec{a}, \vec{b}$$ are unit vectors. Furthermore, let's fix $$\vec{a} = (1,0)$$. Then, by the second cosine law, we have 
 
 $$||\vec{a} - \vec{b}||^2 = ||\vec{a}||^2 + ||\vec{b}||^2 - 2||\vec{a}|| ||\vec{b}|| \cos(\theta)$$
 
 where $$\theta$$ is the angle between $$\vec{a}$$ and $$\vec{b}$$. 
 
-Also, since $$cos(\theta) = \frac{\vec{a} \cdot \vec{b}}{||\vec{a}|| ||\vec{b}||}$$, we can simplify the above equation to
+Also, since $$cos(\theta) = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}| |\vec{b}|}$$, we can simplify the above equation to
 
 $$1 = 2 - 2(1,0) \cdot \vec{b}$$
 

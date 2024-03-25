@@ -3,7 +3,7 @@ layout: post
 title: Multinomial Pascal's Triangle
 date: 2024-03-24 14:00:00
 description: Pascal's triangle for multinomial coefficients
-tags: for-fun math not-rigorous
+tags: for-fun math not-rigorous in-progress
 featured: true
 ---
 
@@ -171,3 +171,22 @@ Prop
 Proof
 : Again, there exists a messy proof and an intuitive proof. Let's use the latter. We see that $$\binom{n}{a_1, a_2, \ldots, a_k}$$ is the number of ways to divide $$n$$ elements into $$k$$ groups with $$a_i$$ elements in the ith group. Let's choose the first element and divide the cases depending on which group it goes to. If it goes to the ith group, then we have $$n-1$$ elements to divide into $$k$$ groups with $$a_i - 1$$ elements in the ith group. This corresponds to the value of $$\binom{n-1}{a_1, \ldots, a_i - 1, \ldots, a_k}$$.
 
+Since we have a possible arrangement of ternary coefficients, let's define once again what we mean by "visually pleasing". First a definition
+
+Def
+: Let $$k$$ be a coefficient comming from term $$x_1^{a_1}x_2^{a_2} \cdots x_n^{a_n}$$. The coefficients that are **adjacent** to $$k$$ are
+1. coefficients that come from terms $$x_1^{a_1}x_2^{a_2} \cdots x_i^{a_i - 1} \cdots x_n^{a_n}$$
+2. coefficients that come from terms $$x_1^{a_1}x_2^{a_2} \cdots x_i^{a_i + 1} \cdots x_n^{a_n}$$
+3. coefficients that come from terms $$x_1^{a_1}x_2^{a_2} \cdots x_i^{a_i + 1} \cdots x_j^{a_j - 1} \cdots x_n^{a_n - 1}$$
+
+You can think of adjecent coefficients as ones that are one hamming distance away from the coefficient $$k$$. We can say that the arrangment of the coefficients is visually pleasing if the distance between the adjacent coefficients are the same for all coefficients.
+
+Also, we can define coefficients **above** as coefficients that are adjacent to the coefficient $$k$$ with type 1 in the definition above.
+
+### Existance of a Multinomial Pascal's Triangle
+
+We will now show that arrangement of multinomial coefficients that satisfies the properties
+
+1. For any coefficient, the distance between the adjacent coefficients are the same.
+
+We can construct such arrangement as follows. 

@@ -134,7 +134,7 @@ Proof
 
 $$\frac{p_{k + 2}}{p_k} = \frac{1 - (1 - p_k^2)^2}{p_k} = \frac{1 - 1 + 2p_k^2 - p_k^4}{p_k} = 2p_k - p_k^3$$
 
-We can show that $$2p_k - p_k^3$$ goes to zero as $k$ increases. Thus the rate of convergence is larger than exponential.
+We can show that $$2p_k - p_k^3$$ goes to zero as $$k$$ increases. Thus the rate of convergence is larger than exponential.
 
 Corollary
 : Let $$p_0 < \frac{-1 + \sqrt{5}}{2}$$. Then there does not exist a $$c \in R_+$$ such that for all $$n \in \mathbb{N}$$, $$p_{2n} > \frac{1}{c}^n$$.

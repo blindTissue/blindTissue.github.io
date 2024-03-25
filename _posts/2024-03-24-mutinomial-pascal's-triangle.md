@@ -103,7 +103,8 @@ $$\cos(\theta) = \frac{\vec{a} \cdot \vec{b}}{||\vec{a}|| ||\vec{b}||}$$
 $$1 = 2 - 2(1,0) \cdot \vec{b}$$
 
 
-and that $$\vec{b} = (\frac{1}{2}, \pm \frac{\sqrt{3}}{2})$$. Thus, the only possible arrangement is an equilateral triangle.
+and that $$\vec{b} = (\frac{1}{2}, \pm \frac{\sqrt{3}}{2})$$. Thus, the only possible arrangement is an equilateral triangle. $$\downarrow$$
+
 
 We will use generalized version of this property to explore arrangement of multinomial coefficients.
 
@@ -114,6 +115,7 @@ I used to wonder why we werent told about Pascal's triangle for multinomial coef
 I tried to draw the equivalent of ternary coefficients on a paper, however, I coudln't make a good arrangment in two dimension. I noticed that the number of coefficients of $$(a + b + c)^n$$ is same as sum of the number of coefficieints of $$(a + b)^0$$ to $$(a + b)^n$$. That is when I noticed the following was possible.
 
 First row $$(a + b+ c)^0$$
+
 $$
 \begin{array}{c}
 1 \\
@@ -121,6 +123,7 @@ $$
 $$
 
 Second row $$(a + b + c)^1$$
+
 $$
 \begin{array}{c}
 1 \\
@@ -129,6 +132,7 @@ $$
 $$
 
 Third row $$(a + b + c)^2$$
+
 $$
 \begin{array}{c}
 1 \\
@@ -138,6 +142,7 @@ $$
 $$
 
 Fourth row $$(a + b + c)^3$$
+
 $$
 \begin{array}{c}
 1 \\
@@ -155,7 +160,7 @@ Prop
 Proof
 : We can prove this by induction.(That was in fact, my fist proof of this problem). However, it is really messy and not fun. Instead, there is a more intuitive proof.
 
-We can think of each coefficient as ways to divide $$k$$ elements into $$n$$ groups. We can divide the cases depending on the number of elements that are put in the last group. If we put $$i$$ elements in the last group, then we have $$k-i$$ elements to divide into $$n-1$$ groups. This corresponds to the number of coefficients in $$(x_1 + x_2 \cdots x_{n-1})^{k-i}$$. Thus, the total number of coefficients is the sum of the number of coefficients in $$(x_1 + x_2 + \cdots x_{n-1})^0$$ to $$(x_1 + x_2 + \cdots x_{n-1})^k$$.
+We can think of each coefficient as ways to divide $$k$$ elements into $$n$$ groups. We can divide the cases depending on the number of elements that are put in the last group. If we put $$i$$ elements in the last group, then we have $$k-i$$ elements to divide into $$n-1$$ groups. This corresponds to the number of coefficients in $$(x_1 + x_2 \cdots x_{n-1})^{k-i}$$. Thus, the total number of coefficients is the sum of the number of coefficients in $$(x_1 + x_2 + \cdots x_{n-1})^0$$ to $$(x_1 + x_2 + \cdots x_{n-1})^k$$. $$\downarrow$$
 
 Thus, we see that one possible arrangement of n-nomial coefficients is by stacking the previous (n-1)-nomial coefficient arrangement.
 
@@ -169,7 +174,7 @@ Prop
 : $$\binom{n}{a_1, a_2, \ldots, a_k} = \sum_{i=1}^k \binom{n-1}{a_1, \ldots, a_i - 1, \ldots, a_k}$$
 
 Proof
-: Again, there exists a messy proof and an intuitive proof. Let's use the latter. We see that $$\binom{n}{a_1, a_2, \ldots, a_k}$$ is the number of ways to divide $$n$$ elements into $$k$$ groups with $$a_i$$ elements in the ith group. Let's choose the first element and divide the cases depending on which group it goes to. If it goes to the ith group, then we have $$n-1$$ elements to divide into $$k$$ groups with $$a_i - 1$$ elements in the ith group. This corresponds to the value of $$\binom{n-1}{a_1, \ldots, a_i - 1, \ldots, a_k}$$.
+: Again, there exists a messy proof and an intuitive proof. Let's use the latter. We see that $$\binom{n}{a_1, a_2, \ldots, a_k}$$ is the number of ways to divide $$n$$ elements into $$k$$ groups with $$a_i$$ elements in the ith group. Let's choose the first element and divide the cases depending on which group it goes to. If it goes to the ith group, then we have $$n-1$$ elements to divide into $$k$$ groups with $$a_i - 1$$ elements in the ith group. This corresponds to the value of $$\binom{n-1}{a_1, \ldots, a_i - 1, \ldots, a_k}$$. $$\downarrow$$
 
 Since we have a possible arrangement of ternary coefficients, let's define once again what we mean by "visually pleasing". First a definition
 
@@ -185,7 +190,7 @@ Also, we can define coefficients **above** as coefficients that are adjacent to 
 
 ### Existance of a Multinomial Pascal's Triangle
 
-We will now show that arrangement of multinomial coefficients that satisfies the properties
+We will now show that there exists an arrangement of multinomial coefficients that satisfies the properties
 
 1. For any coefficient, the distance between the adjacent coefficients are the same.
 

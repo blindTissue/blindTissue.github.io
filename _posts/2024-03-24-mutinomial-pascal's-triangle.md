@@ -102,7 +102,6 @@ $$\cos(\theta) = \frac{\vec{a} \cdot \vec{b}}{||\vec{a}|| ||\vec{b}||}$$
 
 $$1 = 2 - 2(1,0) \cdot \vec{b}$$
 
-
 and that $$\vec{b} = (\frac{1}{2}, \pm \frac{\sqrt{3}}{2})$$. Thus, the only possible arrangement is an equilateral triangle. $$\downarrow$$
 
 
@@ -190,8 +189,58 @@ Also, we can define coefficients **above** as coefficients that are adjacent to 
 
 ### Existance of a Multinomial Pascal's Triangle
 
-We will now show that there exists an arrangement of multinomial coefficients that satisfies the properties
+We will now show that there exists an arrangement of up to n-nomial coefficients in $$\mathbb{R}^n$$ that satisfies the following property. 
 
-1. For any coefficient, the distance between the adjacent coefficients are the same.
+* For any coefficient, the distance between the adjacent coefficients are the same.
 
-We can construct such arrangement as follows. 
+We drop the requirement that coefficients that corresponds to $$x_1^{a_1}x_2^{a_2} \cdots x_n^{a_n}$$ are located at $$a_1\vec{a} + a_2\vec{b} + \cdots + a_n\vec{c}$$.
+
+For this, let's first formulate a sequence of vectors. Each vector is of dimension $$n$$ and follows the following rules.
+
+* $$a_i$$ item's value is $$0$$ for all itmes after the $$n$$th term.
+* $$||a_i|| = 1$$
+* for all $$j < i$$, $$x_i \cdot a_j = \frac{1}{2}$$.
+* $$a_1 = (1, 0, 0, \ldots, 0)$$
+
+We can show existance of such sequence. In fact, there are $$2^{n-1}$$ possible sequences that satisfy the above rules. (Proof is written later)
+
+Prop
+: Using $$a_i$$ as the base vectors for multinomial coefficients, $$x_i$$, and placing the coefficients that corresponds to $$x_1^{q_1}x_2^{q_2} \cdots x_n^{q_n}$$ at $$q_1a_1 + q_2a_2 + \cdots + q_na_n$$, we can form a multinomial Pascal's triangle.
+
+Proof
+: According to the following formulation, the distance between the adjacent coefficients are the same by 2nd cosine law. $$\downarrow$$
+
+
+### Uniqueness of the Multinomial Pascal's Triangle (Given some additional conditions)
+Is this the only possible arrangement? Well, consider the following.
+
+$$
+\begin{array}{c}
+1a \\
+1a \quad 1b \\
+\end{array}
+$$
+
+$$
+\begin{array}{c}
+1a^2 \quad (1a, 2ab) \quad 1b^2 \\
+1a \quad \quad  1b \\
+\end{array}
+$$
+
+$$
+\begin{array}{c}
+1a^2 \quad (1a, 2ab) \quad 1b^2 \\
+1a^3 \quad (1a, 3a^2b) \quad  (1b, 3ab^2) \quad 1b^3 \\
+\end{array}
+$$
+
+By stacking the coefficients, we can create an arrangement that satisfies the property. In my opinion, this does not look pleasing. Thus we want to limit this. 
+
+Let's first prove that this is the only other possible arrangemtn in 2D.
+
+Prop
+: In $$R^2$$, there are two arrangement of the binomial coefficients that satisfies condition that the adjacent coefficients are the same distance. 
+
+Proof
+: From the arrangement, $$a_1, a_2$$ are fixed to be a unit vector forming an equilateral triangle with the origin.

@@ -235,12 +235,44 @@ $$
 \end{array}
 $$
 
-By stacking the coefficients, we can create an arrangement that satisfies the property. In my opinion, this does not look pleasing. Thus we want to limit this. 
+By stacking the coefficients, we can create an arrangement that satisfies the property.
 
-Let's first prove that this is the only other possible arrangemtn in 2D.
+Furthermore, another possible arrangement is a roll-up of the triangle. We can roll the triangle into a spiral. This also satisfies the property.
+
+These shapes do not look visually pleasing to me. I would want to limit this. So let's add additional conditions.
+
+* No two coefficients are in the same location.
+* n-nomial coefficients should be mapped to $$R^n$$.
+
+So with these condition, is the equilateral triangle the only possible arrangement for binomial coefficients? Yes!
 
 Prop
 : In $$R^2$$, there are two arrangement of the binomial coefficients that satisfies condition that the adjacent coefficients are the same distance. 
 
 Proof
-: From the arrangement, $$a_1, a_2$$ are fixed to be a unit vector forming an equilateral triangle with the origin.
+: From the arrangement, $$a_1, a_2$$ are fixed to be a unit vector forming an equilateral triangle with the origin. Now let's look at the location of $$x_1^2$$. There are only two possible locations. One is the normal pascal's triangle and the other is flipped. However, we banned the latter. So the only possible location of $$x_1^2$$ is the normal pascal's triangle. $$\downarrow$$ 
+
+Let's define a term, called **level**
+: In an n-nomial Pascal's triangle, coefficients of level $$k$$ are the coefficients corresponding to $$(x_1 + x_2 + \cdots x_n)^k$$.
+
+Now, remember a proposition we proved earlier.
+
+The number of coefficients in $$(x_1 + x_2 + \cdots x_n)^k$$ is equal to sum of number of coefficients in $$(x_1 + x_2 + \cdots x_{n-1})^0$$ to $$(x_1 + x_2 + \cdots x_{n-1})^k$$
+
+We will show that n-nomial coefficients of level $$k$$ has a stricter level of adjacentness compared to $$(n-1)$$-nomial coefficients up to level $$k$$.
+
+Proof
+: #TODO fill out later.
+
+Cor
+: There exists a unique arrangement of 3-nomial coefficients of level $$k$$ on 2D.
+
+Proof
+: We already showed the uniqueness of arrangement of binomial coefficients. the 3-nomial coefficients of level $$k$$ has a stricter level of adjacentess, as thus, the only possible arrangement is that on original Pascal's Triangle: equilateral triangle. $$\downarrow$$
+
+Now we are almost done. We will show that the only possible arrangement of multinomial coefficients is the one we defined earlier.
+
+We already showed that the vectors required to satisfy the adjacentness property uniquely (up to rotation and reflection) exists. With the requirenments, we have uniquely defined the arrangement up to level 1. Now, we will show that adding another level is unique.
+
+For intuition, let's first see it in the 3-nomial case.
+

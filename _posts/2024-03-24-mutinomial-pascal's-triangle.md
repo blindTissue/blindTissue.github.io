@@ -223,7 +223,8 @@ We have shown that there exists a multinomial Pascal's Triangle that follows the
 
 First, we show that the vectors $$a_k$$ that satisfies
 
-$$||a_i|| = 1$$ and $$a_i \cdot a_j = \frac{1}{2}$$ for $$i \neq j$$ forms a basis for $$\mathbb{R}^n$$.
+$$||a_i|| = 1$$ 
+and $$a_i \cdot a_j = \frac{1}{2}$$ for $$i \neq j$$ forms a basis for $$\mathbb{R}^n$$.
 
 Prop
 : The vectors $$a_k$$ that satisfies the above properties forms a basis for $$\mathbb{R}^n$$.

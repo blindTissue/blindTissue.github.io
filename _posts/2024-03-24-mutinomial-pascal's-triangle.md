@@ -3,7 +3,7 @@ layout: post
 title: Multinomial Pascal's Triangle
 date: 2024-03-24 14:00:00
 description: Pascal's triangle for multinomial coefficients
-tags: for-fun math not-rigorous in-progress
+tags: for-fun math
 featured: true
 ---
 

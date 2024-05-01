@@ -7,6 +7,8 @@ tags: for-fun math not-rigorous in-progress
 featured: true
 ---
 
+Check out the [pdf version](/assets/pdf/Multinomial_Pascal_Triangle.pdf)! (Recommended!)
+
 $$
 \begin{array}{c}
 1 \\
@@ -68,6 +70,7 @@ $$
 \\                                     
 \end{array}
 $$
+
 
 let's define $$\vec{a}$$ and $$\vec{b}$$ as vectors from the top of the triangle $$\color{Red}\boldsymbol{1}$$ to $${\color{Red}\boldsymbol{1}}a$$ and $${\color{Red}\boldsymbol{1}}b$$ respectively. we see that the coefficients of $$a^nb^m$$ is located at $$n\vec{a} + m\vec{b}$$. 
 
@@ -223,7 +226,7 @@ We have shown that there exists a multinomial Pascal's Triangle that follows the
 
 First, we show that the vectors $$a_k$$ that satisfies
 
-$$||a_i|| = 1$$ 
+$$||a|| = 1$$ 
 and $$a_i \cdot a_j = \frac{1}{2}$$ for $$i \neq j$$ forms a basis for $$\mathbb{R}^n$$.
 
 Prop

@@ -7,7 +7,7 @@ tags: for-fun math
 featured: true
 ---
 
-Check out the [pdf version](/assets/pdf/Multinomial_Pascal_Triangle.pdf)! (Recommended!)
+Check out the [pdf version](/assets/pdf/Multinomial_Pascal_Triangle_0524.pdf)! (Recommended!)
 
 $$
 \begin{array}{c}
@@ -329,5 +329,9 @@ Now we are almost done. We will show that the only possible arrangement of multi
 
 We already showed that the vectors required to satisfy the adjacentness property uniquely (up to rotation and reflection) exists. With the requirenments, we have uniquely defined the arrangement up to level 1. Now, we will show that adding another level is unique.
 
-For intuition, let's first see it in the 3-nomial case.
+The PDF version is more precise. Please check it out!
+
+### Updates
+
++ 05/24/2024: Major update on the Proof. 
 

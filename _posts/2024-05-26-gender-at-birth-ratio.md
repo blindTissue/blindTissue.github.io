@@ -11,7 +11,7 @@ featured: true
 ### Introduction
 
 Sometime in middle school, I heard a news stating that gender at birth ratio in South Korea has shifted towards having more females.
-The news stated that change of preference of parents towards having daughters is the reason behind the shift. Abortion, unlike in United States is a rarely talked about topic in Korea and thus I assumed that shift in people's preference can naturally affect gender at birth ratio (Without abortions).
+The news stated that change of preference of parents towards having daughters is the reason behind the shift. Abortion, unlike in United States is a rarely talked about topic in Korea and thus I assumed that shift in people's preference can naturally affect gender at birth ratio.
 However, I never really thought about the topic until recently at which the results were quite surprising.
 
 ### Simple Game
@@ -55,8 +55,7 @@ Honestly, I am a computer scientist and is not heavily interested in this topic.
 
 ### Simulation
 
-A simplification and a more resourceful approach is to simulate random birth. The objective of the simulation is to find how likely birth ratio consensus is if the strategy successfully stopped at optimal stopping point.
-
+A simpler and more efficient method is to simulate random births. The goal of this simulation is to determine the likelihood of achieving a consensus on the birth ratio if the strategy halts successfully at the optimal stopping point.
 ```python
 import random
 
@@ -83,13 +82,15 @@ def max_diff_ratio(min_pop, max_pop, ratio):
 
 ```
 
-We run the above simulation for 10,000 times and show the histogram of the results. I set the min pop to be 1,000,000 max pop to be 1,500,000 and ratio to be 21/41 (natural gender ratio according to googld). Thanks to multiprocessing, the simulation can be done within two minutes.
+We run the above simulation for 10,000 times and show the histogram of the results. I set the min pop to be 1,000,000 max pop to be 1,500,000 and ratio to be 21/41 (natural gender ratio according to Google). Thanks to multiprocessing, the simulation can be done within two minutes.
 
 {% include figure.liquid loading="eager" path="assets/img/ratio_centered.png" class="img-fluid rounded z-depth-1" %}
 
-mean: 0.00023
-std: 0.00044
-results with ratio diff greater than 0.00015: 27
+**mean: 0.00023
+
+std: 0.00044**
+
+**results with ratio diff greater than 0.00015: 27**
 
 The results show that even with the optimal stopping, changing gender ratio for a large population would not be popssible. There are only 27 cases where the ratio difference is greater than 0.00015.
 So yeah, if a group of population has gender ratio at birth which greatly differs from the natural, then it is likely that there are other factors at play. (i.e. abortions, gender-selective infections, etc.)

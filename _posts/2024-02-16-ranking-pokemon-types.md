@@ -19,7 +19,11 @@ The problem setup seems similar to chess rating system. We can see each types as
 
 However, the type effectiveness chart is not inversely symmetric. For example, fighting type is not very effective against bug type but bug type is also not very effective against fighting type. 
 
-Thus Pokemon effectiveness chart is not a zero-sum game. We cannot simply use the elo rating system.
+So the "effectiveness game" is not zero-sum. Rating update equation would need to be tweaked.
+
+Furthermore, elo rating system has prior assumption that a player's performance is normally distributed. For Pokemon types, we do not have such assumption. We have strict results.
+
+Thus creating a different rating system would be more appropriate.
 
 ### Bounds
 
@@ -54,8 +58,8 @@ However, defining $$S_D$$ is not as straightforward. One naive approach would be
 
 This is the iterative steps I came up with:
 
-1. Set all $a_i^0 = 100$ and $d_i^0 = 100$ for all $i$.
-2. Update $a_i$ by the following formula:
+1. Set all $$a_i^0 = 100$$ and $$d_i^0 = 100$$ for all $$i$$.
+2. Update $$a_i$$ by the following formula:
 $$a_i^{t + 1} = \sum_{j \in T} S_A(t_i, t_j) \cdot d_j^t$$ then normalize the values such that $$\frac{1}{|T|}\sum_{i \in T} a_i^{t+1} = 100$$.
 3. Update $d_i$ by the following formula:
 $$d_i^{t + 1} = \sum_{j \in T} S_D(t_i, t_j) \cdot a_j^t$$ then normalize the values such that $$\frac{1}{|T|}\sum_{i \in T} d_i^{t+1} = 100$$.
@@ -82,7 +86,7 @@ Let's now prove that the iterative approach satisfies these bounds.
 
 We can prove this by induction. We first see that iteration 0 satisfies this bound as $$a_i^0, d_i^0 = 100$$ for all $$i$$.
 
-Now let's assume that iteration $t$ satisfies this bound. We will show that iteration $t+1$ satisfies this bound.
+Now let's assume that iteration $t$ satisfies this bound. We will show that iteration $$t+1$$ satisfies this bound.
 
 Let $$t_1, t_2$$ be two types such that $$S_A(t_1, t_j) = S_A(t_2, t_j)$$ for all $$t_j \in T \setminus \{t_k\}$ where $S_A(t_1, t_j) \geq S_A(t_2, t_j)$$.
 

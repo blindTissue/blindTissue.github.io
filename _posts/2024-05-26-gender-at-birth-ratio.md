@@ -86,9 +86,9 @@ We run the above simulation for 10,000 times and show the histogram of the resul
 
 {% include figure.liquid loading="eager" path="assets/img/ratio_centered.png" class="img-fluid rounded z-depth-1" %}
 
-**mean: 0.00023
+**mean: 0.00023**
 
-std: 0.00044**
+**std: 0.00044**
 
 **results with ratio diff greater than 0.00015: 27**
 

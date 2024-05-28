@@ -3,7 +3,7 @@ layout: post
 title: Gender at Birth Ratio
 date: 2024-05-26 14:00:00
 description: Can people's preference affect gender at birth
-tags: for-fun not-riguorous
+tags: for-fun not-rigorous
 featured: true
 ---
 
@@ -16,7 +16,7 @@ However, I never really thought about the topic until recently at which the resu
 
 ### Simple Game
 
-Let's assume that we are doing a coin flipping game on a fair coin. The game is simple. If the coin lands on head, the player earns a dollar. If coin lands tails, terhe player loses a dollar. The total number of coin flips is set.
+Let's assume that we are doing a coin flipping game on a fair coin. The game is simple. If the coin lands on head, the player earns a dollar. If coin lands tails, the player loses a dollar. The total number of coin flips is set.
 We can easily argue that the the expected earnings of the player is 0.
 
 Now's let's make the game more fun. Now, the player can stop the game at any point. If the player is on a winning streak, the player can leave the game with earnings.

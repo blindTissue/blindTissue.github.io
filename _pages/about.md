@@ -19,9 +19,13 @@ social: false # includes social icons at the bottom of the page
 
 
 
-Hello! I am Sungwon Kim, and I am currently pursuing BS / MSE in Computer science and BS in Applied Mathematics and Statistics. I am currently a senior undergraduate.
+Hello! I am Sungwon Kim, and I am pursuibg a Master's degree in Computer Science at the Johns Hopkins University. 
 
-I am currently in [Mark Dredze's](https://www.cs.jhu.edu/~mdredze/) lab, where I worked on RAG application on Tobacco Articles. I am also a Course Assistant for [NLP Self-Supervised Models](https://self-supervised.cs.jhu.edu/sp2024/).
+I have Graduated with BS in Computer Science and Applied Mathematics and Statustucs frin tge Johns Hopkins University in May 2024.
 
-I am planning to add additional stuff soon.
+I am currently in the NIH STAR program. I am part of a team making tools for researchers.
+
+Check out blog posts below where I write about interesting but not-really-interesting topics.
+
+
 

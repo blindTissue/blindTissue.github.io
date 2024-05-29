@@ -43,7 +43,9 @@ An intuitive picutre is as follows. Let's say that you had $$A$$ heads and $$B$$
 
 The above games is a simplification of the gender at birth ratio problem. the number of heads can be thought as number of males and the number of tails can be thought number of females.
 We have shown that if the coin is fair, there is no strategy to maximize the difference between number of male and female. 
-However, if the objective is to maximize gender at birth ratio, then there exists a strategy that can increase the ratio.
+However, if the objective is to maximize gender at birth ratio, then there exists a strategy that can skew the ratio.
+
+My main question was if the gender at birth ratio can be affected by people's preference, on large scale.
 
 For a more detailed model, to question if an authoritatively enforced birth ratio policy can affect birth ratio, assuming that gender at birth follows natural gender ratio, we would need to consider the following factors:
 $$p$$: natural gender probability of male birth

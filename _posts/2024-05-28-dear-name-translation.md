@@ -62,4 +62,3 @@ To that place that this dawn ends.
 I used to listen to this song during tough times. There was one day, though, when it made me angry. But that's a story for another time.
 
 
----

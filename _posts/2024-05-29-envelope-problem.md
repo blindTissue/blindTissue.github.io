@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Two Envelopes Problem
+title: Two Envelope Problem
 date: 2024-05-29 14:00:00
 description: Switch or not to switch, that is the question.
 tags: for-fun math
@@ -27,7 +27,7 @@ $$
 \begin{aligned}
 E(B) &= E(B | A< B) P(A < B) + E(B | A > B) P(A > B) \\
 &= \frac{1}{2} E(2A | A < B) + \frac{1}{2} E(A/2 | A > B) \\
-&= E(A | A < B) \frac{1}{4}E(A | A > B)
+&= E(A | A < B) + \frac{1}{4}E(A | A > B)
 \end{aligned}
 $$
 
@@ -83,7 +83,7 @@ E[X > Y]: 0.5021
 Simulation above implies that E[X / Y] = E[Y / X] = 1.25. In fact, we can show a more general result.
 
 Let $$X$$ be a probability distribution with domain of $$(0, \infty)$$. Then $$E[x_1 / x_2] \geq 1$$. Furthermore, $$E[x_1 / x_2] = 1$$ if and only if $$X$$ has support of a single point.
-: Proof is as follows. For any instance of $$x_1 / x_2 = k$$, there is a same probability of $$x_1 / x_2 = 1 / k$$. $$k + \frac{1}{k} \geq 2$$ for all $$k > 0$$. So, $$E[x_1 / x_2] \geq 1$$.
+: Proof is as follows. For any instance of $$x_1 / x_2 = k$$, there is a same probability of $$x_1 / x_2 = \frac{1}{k}$$. $$k + \frac{1}{k} \geq 2$$ for all $$k > 0$$. So, $$E[x_1 / x_2] \geq 1$$.
 
 
 For the two envelope problem, we can see the problem as drawing without replacement. In this case, the same argumentcan be made. for any $$x_1 / x_2 = k$$, there is an equal probability of $$x_1 / x_2 = 1 / k$$.

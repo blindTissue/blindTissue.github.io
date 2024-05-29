@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Gender at Birth Ratio
+title: Translation of IU's Dear Name
 date: 2024-05-28 14:00:00
 description: Translation of IU's Dear Name
 tags: for-fun

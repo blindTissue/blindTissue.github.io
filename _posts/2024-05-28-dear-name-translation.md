@@ -10,7 +10,7 @@ featured: true
 K-POP is popular nowadays with BTS, Blackpink, and other groups. My favorite artist is IU. She is the most famous single artist in Korea.
 She sings all kinds of songs, from ballads to pop songs. Her songs are very popular in Korea but not as much in other countries.
 One of the reason, I think, is that her songs are very Korean. The lyrics are often times poetic. Often times, the lyrics requires understanding of Korean culture and language.
-Even then, I think most of the English Translations of that song doesn't do justice. So, I decided to translate one of her songs, quite unprofessionally, in English.
+Even then, I think most english translations of her songs don't do justice. So, I decided to translate one of her songs, quite unprofessionally, in English.
 
 Original song: [Dear Name](https://www.youtube.com/watch?v=JSOBF_WhqEM&ab_channel=IU-Topic)
 
@@ -54,7 +54,7 @@ Through the endless lost cold and harsh days\
 I know your name that has been quietly forgotten\
 I will not stop.\
 I will shout as many times as it takes\
-Even though we inconceivably far, let's go\
+Even though we are inconceivably far, let's go\
 To that place that this dawn ends.
 
 -------------------

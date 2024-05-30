@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Induction as a Reduction Problem
-date: 2024-05-30 14:00:00
+date: 2024-05-30 01:00:00
 description: Generate or Reduce?
 tags: for-fun math not-rigorous
 featured: true

@@ -25,11 +25,11 @@ $$\sum_{i=1}^{n} i = \frac{n(n+1)}{2}$$
 For 2 we see that
 
 $$\begin{aligned}
-\sum_{i=1}^k &= \frac{k(k+1)}{2} \\
+\sum_{i=1}^k i &= \frac{k(k+1)}{2} \\
 (\sum_{i=1}^{k} i) + (k+1) &= \frac{k(k+1)}{2} + (k+1) \\
 &= \frac{k(k+1) + 2(k+1)}{2} \\
 &= \frac{(k+1)(k+2)}{2} \\
-&= \sum_{i=1}^{k+1}
+&= \sum_{i=1}^{k+1} i
 \end{aligned}$$
 
 So, the statement is true for all $$n$$.
@@ -59,11 +59,14 @@ This is advantaguous as for justification of expanding $$S_i$$ to $$S_{i+1}$$, w
 
 This is often hard. There are edge cases that one hhas to consider. Bekow is a simple example.
 
+#### Problem
+
 **A binary tree is a rooted tree in which each node has at most two children. Using
 induction, show that in any binary tree the number of nodes with two children
 is exactly one less than the number of leaves.**
 
 Proof
+---
 : For this problem, the set $$S$$ is the set of all binary trees. $$f$$ is statement that in $$x$$, the number of nodes with two children
 is exactly one less than the number of leaves.
 
@@ -74,7 +77,7 @@ For the base case, single node tree has 1 node and 0 edges, so the statement is 
 Now look at case of $$S_{k+1}$$. we look at nodes in depth $$k+1$$. If the parent of the node has two children, 
 then deleting the children of that parent would reduce the number of nodes and edges by 2. If the parent has a single child,
 then deleting the child would reduce the number of nodes and edges by 1. Deleting all parents of nodes of depth $$k+1$$ 
-would reduce the number of nodes and edges by same amount, and result in a tree of depth $$k$$. So if $f(S_k) = 1$, then $f(S_{k+1}) = 1$.
+would reduce the number of nodes and edges by same amount, and result in a tree of depth $$k$$. So if $$f(S_k) = 1$$, then $$f(S_{k+1}) = 1$$.
 
 So, the statement is true for all binary trees.
 
@@ -85,7 +88,7 @@ If we were to do the opposite, we would need to show that our "addition" of node
 Using the reduction method, we can avoid this problem.
 
 Reduction is a strong tool in computer science. [Dynamic Programming](https://en.wikipedia.org/wiki/Dynamic_programming) and [Turing Reduction](https://en.wikipedia.org/wiki/Turing_reduction) 
-simplifies the problem by reducing it to a problem we already know.
+also simplifies the problem by reducing it to a problem we already know.
 
 
 

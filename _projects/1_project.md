@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Is 
+title: Is Procrustes Alignment Optimal?
 description: Is Procrustes Alignment Optimal?
 category: work
 ---

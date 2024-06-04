@@ -11,7 +11,7 @@ A while back, I watched a video on [Pokemon type ranking](https://www.youtube.co
 
 ### Type Effectiveness
 
-{% include figure.liquid loading="eager" path="assets/img/Pokemon_Type_Chart.svg" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid loading="eager" path="assets/img/Pokemon_Type_Chart.png" class="img-fluid rounded z-depth-1" %}
 
 Chart Source: Wikipedia
 

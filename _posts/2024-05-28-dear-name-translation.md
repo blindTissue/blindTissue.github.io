@@ -31,7 +31,7 @@ This time I will never let go of\
 your hands of that distant past.
 
 Across endless dark nights\
-I know that your dreams has quietly disappeared\
+I know that your dreams has quietly disappeared
 
 I will wait for a long time\
 I will definitely find you.\
@@ -48,7 +48,7 @@ This time I will never forget\
 The words that you had been waiting for a long time alone.
 
 Across endless dark nights\
-I know that your dreams has forever disappeared\
+I know that your dreams has forever disappeared
 
 I will wait for a long time\
 I will definitely find you\

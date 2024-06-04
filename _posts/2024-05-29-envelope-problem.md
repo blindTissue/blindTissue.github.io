@@ -83,10 +83,11 @@ E[X > Y]: 0.5021
 Simulation above implies that E[X / Y] = E[Y / X] = 1.25. In fact, we can show a more general result.
 
 Let $$X$$ be a probability distribution with domain of $$(0, \infty)$$. Then $$E[x_1 / x_2] \geq 1$$. Furthermore, $$E[x_1 / x_2] = 1$$ if and only if $$X$$ has support of a single point.
-: Proof is as follows. For any instance of $$x_1 / x_2 = k$$, there is a same probability of $$x_1 / x_2 = \frac{1}{k}$$. $$k + \frac{1}{k} \geq 2$$ for all $$k > 0$$. So, $$E[x_1 / x_2] \geq 1$$.
+: Proof is as follows. For any instance of $$x_1 / x_2 = k$$, there is a same probability of $$x_1 / x_2 = \frac{1}{k}$$. $$k + \frac{1}{k} \geq 2$$ for all $$k > 0$$ by [AM-GM Inequality](https://artofproblemsolving.com/wiki/index.php/AM-GM_Inequality).
+So, $$E[x_1 / x_2] \geq 1$$.
 
 
-For the two envelope problem, we can see the problem as drawing without replacement. In this case, the same argumentcan be made. for any $$x_1 / x_2 = k$$, there is an equal probability of $$x_1 / x_2 = 1 / k$$.
+For the two envelope problem, we can see the problem as drawing without replacement. In this case, the same argument can be made. for any $$x_1 / x_2 = k$$, there is an equal probability of $$x_1 / x_2 = 1 / k$$.
 
 Finally, one takeaway would be
 

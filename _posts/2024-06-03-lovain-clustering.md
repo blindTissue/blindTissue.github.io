@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Louvain Clustering
-date: 2024-05-28 14:00:00
-description: Minimize Modularity!
+date: 2024-06-03 14:00:00
+description: Maximize Modularity!
 tags: for-fun
 featured: true
 ---
@@ -78,7 +78,7 @@ You can find the code [here](https://github.com/blindTissue/Louvain).
 
 - [Louvain Method](https://en.wikipedia.org/wiki/Louvain_method)
 - [On Modudularity Clustering](https://kops.uni-konstanz.de/server/api/core/bitstreams/283d523f-ebf3-4f1d-9bd0-96e4b96bc4eb/content)
-- [Machine Learning with Graphs | Lecture 13.3](https://www.youtube.com/watch?v=0zuiLBOIcsw&t=607s&ab_channel=StanfordOnline)
+- [Machine Learning with Graphs Lecture 13.3](https://www.youtube.com/watch?v=0zuiLBOIcsw&t=607s&ab_channel=StanfordOnline)
 
 
 

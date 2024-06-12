@@ -32,7 +32,12 @@ Modularity lies within range $$[-1/2, 1]$$.
 
 The modularity above can be written as sum of modularity in a cluster. A modularity of a cluster can be simplified into
 
-$$Q_c = \frac{1}{2m} = \frac{\sum_{in}}{2m} - \left( \frac{\sum_{tot}}{2m} \right)^2$$
+$$Q_c = \frac{\sum_{in}}{2m} - \left( \frac{\sum_{tot}}{2m} \right)^2$$
+
+and the total modularity is the sum of the modularity of all clusters.
+
+$$Q = \sum_{c} Q_c$$
+
 
 Let's start with basic example of modularity to gain some intuition.
 

@@ -184,6 +184,8 @@ When I manually skimmed through the tokens mapped to 122456 and 66325, most of t
 
 If you have any ideas, please let me know. Thanks for reading!
 
+Code can be found [https://github.com/blindTissue/embedding_matrix_experiment][https://github.com/blindTissue/embedding_matrix_experiment]
+
 
 
 

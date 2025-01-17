@@ -35,7 +35,7 @@ $$\begin{aligned}
 So, the statement is true for all $$n$$.
 
 For induction examples shown in elementary discrete math, it is often the case that you can start from the $$n = k$$ case and show that the statement is true for $$n=k+1$$.
-However, for some problems, viewing the inductive step as a reduction problem can conceptually simplify the proof.
+However, for some problems, viewing the inductive step as a reduction problem can conceptually simplify your reasoning
 
 
 
@@ -54,10 +54,11 @@ For simplicity say that $$S_k$$ is a subset of $$S$$. Similary, let's say that $
 For induction, we divide the set $$S$$ into indexable subsets $$S_1, S_2, \cdots$$ such that their union is $$S$$. 
 Then we prove that $$f(S_k) = 1$$ for all $$k$$ by the induction step above.
 
-Instead of starting from some $$S_i$$, and expand to $$S_{i+1}$$, we should start from $$S_{i+1}$$ and reduce to $$S_i$$. 
-This is advantaguous as for justification of expanding $$S_i$$ to $$S_{i+1}$$, we must show that the expansion spans all elements of $$S_{i+1}$$.
+In our inductive step, mentally thinking the problem as a reduction is often easier. 
+Instead of starting from items of $$S_i$$, and expand to items of $$S_{i+1}$$, we should treat the problem as finding reduction from items of $$S_{i+1}$$ to items of $$S_i$$. 
+This is advantageous as for justification of expanding $$S_i$$ to $$S_{i+1}$$, we must show that the map from $$S_{i+1} spans all elements of $$S_{i+1}$$.
 
-This is often hard. There are edge cases that one hhas to consider. Bekow is a simple example.
+This is often hard. There are edge cases that one has to consider. Below is a simple example.
 
 #### Problem
 
@@ -67,7 +68,7 @@ is exactly one less than the number of leaves.**
 
 Proof
 ---
-: For this problem, the set $$S$$ is the set of all binary trees. $$f$$ is statement that in $$x$$, the number of nodes with two children
+For this problem, the set $$S$$ is the set of all binary trees. $$f$$ is statement that in $$x$$, the number of nodes with two children
 is exactly one less than the number of leaves.
 
 We would split the set by depth with $$S_k$$ being binary trees with depth $$k$$.

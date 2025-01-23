@@ -44,7 +44,7 @@ Which, according to Wolfram Alpha is $$2.52 \times 10^9 kJ$$.
 
 Now, an Iphone 16 has battery of 3561mAH with 3.85V. Thus the total energy inside the battery would be 13.7Wh. In Joules, that would be $$13.7 \times 3600 = 49320 J$$.
 Thus the total number of phone charges would be $$2.52 \times 10^{12} / 49320 = 5.11 \times 10^7$$. That is 51.1 million charges.
-That looks like a lot, but considering that there are around that many people in South Korea, the potential energy of the pyramid is equal to energy used to fully charge South Korean people's phones once. That's Kind of depressing.
+That looks like a lot, but considering that there are around that many people in South Korea, **the potential energy of the pyramid is equal to energy used to fully charge South Korean people's phones once**. That's Kind of depressing.
 
 ### What is the lower bound of land required to feed one person?
 
@@ -60,4 +60,4 @@ People typically consume 2000kcal per day. Also, milled  rice has around [365Kca
 * A Hectare of land can feed **12800** people per day.
 * In order to sustain one person, we would need $$(100000 / 12800) \simeq .78m^2$$ of land.
 
-So in caloric perspective, we only need a little less than one square meter to feed a person per day. We neede a little less than 300 square meters to feed a person annually.
+So in caloric perspective, we only need a little less than one square meter to feed a person per day. We need a little less than 300 square meters to feed a person annually.

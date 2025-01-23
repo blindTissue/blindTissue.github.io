@@ -23,8 +23,6 @@ Hello! I am Sungwon Kim, and I am pursuing a Master's degree in Computer Science
 
 I have Graduated with BS in Computer Science and Applied Mathematics and Statistics from the Johns Hopkins University in May 2024.
 
-I am currently a Master's Student in the Johns Hopkins University majoring in computer science.
-
 Check out blog posts below where I write about interesting but not-really-interesting topics.
 
 

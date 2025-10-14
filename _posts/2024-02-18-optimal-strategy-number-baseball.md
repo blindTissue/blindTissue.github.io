@@ -13,8 +13,7 @@ As part of my mandatory military service, I was sent to the Korean Army Training
 2. The game starts with a player guessing the number. The opponent then gives feedback in form of $$n$$ strikes and $$m$$ balls. $$n$$ strikes means that $$n$$ digits of the guessed number are in the correct position. $$m$$ balls means that $$m$$ digits of the guessed number are in the opponent's number but in the wrong position.
 3. The two players take turns guessing the number. The game ends when a player correctly guesses the opponent's number.
 
-I started to wonder if there was an optimal strategy for this game. Since there are only $$9 \choose 4$$ possible numbers, there must be a way to find the opponent's number in a minimum number of guesses. 
-
+I started to wonder if there was an optimal strategy for this game. Since there are only $$9 \choose 4$$ possible numbers, there must be a way to find the opponent's number in a minimum number of guesses.
 
 ## Simplified Version
 
@@ -24,12 +23,10 @@ We can think of a game where we instead guess less digit numbers. If we were to 
 
 Things get more interesting when we guess 2 digit numbers. The first choice does not matter as all choices are symmetric to others. Let's say that we chose number $$01$$.
 
-
-|Possible outcomes      |# Possible outcomes| Example      |
-|-----------------------|--------------|-------------|
-| 2 strike              | 1            | 01          |
-| 2 ball                | 1            | 10         |
-| 1 strike              | 16           | 21, 04     |
-| 1 ball                | 16           | 20, 13     |
-| none                  | 56           | 47, 53     |
-
+| Possible outcomes | # Possible outcomes | Example |
+| ----------------- | ------------------- | ------- |
+| 2 strike          | 1                   | 01      |
+| 2 ball            | 1                   | 10      |
+| 1 strike          | 16                  | 21, 04  |
+| 1 ball            | 16                  | 20, 13  |
+| none              | 56                  | 47, 53  |

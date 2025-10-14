@@ -13,7 +13,7 @@ Imagine you are given two identical envelopes, each containing money. One contai
 
 The switching argument goes like this.
 
-Let's say that your envelope contains x dollars. Then the other envelope contains either 2x or x/2 dollars with equal probability. The expected value of the other envelope is then: 
+Let's say that your envelope contains x dollars. Then the other envelope contains either 2x or x/2 dollars with equal probability. The expected value of the other envelope is then:
 
 $$\frac{1}{2} 2x + \frac{1}{2} \frac{x}{2} = \frac{5}{4} x$$
 
@@ -53,20 +53,20 @@ num1_big_count = 0
 for i in range(tot):
     num1 = random.random()
     num2 = num1 * 2
-    
+
     id = random.random()
     if id > 0.5:
         temp = num1
         num1 = num2
         num2 = temp
-    
+
     sum += num1 / num2
     sum_inv += num2 / num1
     num1_sum += num1
     num2_sum += num2
     if num1 > num2:
         num1_big_count += 1
-    
+
 print('E[X / Y]: ' + str(sum / tot))
 print('E[Y / X]: ' + str(sum_inv / tot))
 print('E[X] / E[Y]: ' + str(num1_sum / num2_sum))
@@ -86,7 +86,6 @@ Let $$X$$ be a probability distribution with domain of $$(0, \infty)$$. Then $$E
 : Proof is as follows. For any instance of $$x_1 / x_2 = k$$, there is a same probability of $$x_1 / x_2 = \frac{1}{k}$$. $$k + \frac{1}{k} \geq 2$$ for all $$k > 0$$ by [AM-GM Inequality](https://artofproblemsolving.com/wiki/index.php/AM-GM_Inequality).
 So, $$E[x_1 / x_2] \geq 1$$.
 
-
 For the two envelope problem, we can see the problem as drawing without replacement. In this case, the same argument can be made. for any $$x_1 / x_2 = k$$, there is an equal probability of $$x_1 / x_2 = 1 / k$$.
 
 Finally, one takeaway would be
@@ -97,12 +96,3 @@ This is similar to my previous post on [Gender at Birth Ratio](https://sungwon-k
 In this case, there exists a strategy where we can maximize $$\frac{x}{x + y}$$ by stopping. However, there is no strategy to maximize $$x - y$$. So
 
 $$E[X / (X + Y)] \neq \frac{E[X]}{E[X] + E[Y]}$$
-
-
-
-
-
-
-
-
-

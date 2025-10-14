@@ -7,7 +7,6 @@ tags: for-fun not-rigorous
 featured: true
 ---
 
-
 ### Introduction
 
 Sometime in middle school, I heard a news stating that gender at birth ratio in South Korea has shifted towards having more females.
@@ -38,11 +37,10 @@ You can easily beat the game by stopping the game after the ratio is higher than
 
 An intuitive picutre is as follows. Let's say that you had $$A$$ heads and $$B$$ tails. if $$\frac{A}{A + B} < .5$$, then you can always increase the ratio by flipping additional coins.
 
-
 ### Interpretation
 
 The above games is a simplification of the gender at birth ratio problem. the number of heads can be thought as number of males and the number of tails can be thought number of females.
-We have shown that if the coin is fair, there is no strategy to maximize the difference between number of male and female. 
+We have shown that if the coin is fair, there is no strategy to maximize the difference between number of male and female.
 However, if the objective is to maximize gender at birth ratio, then there exists a strategy that can skew the ratio.
 
 My main question was if the gender at birth ratio can be affected by people's preference, on large scale.
@@ -58,13 +56,14 @@ Honestly, I am a computer scientist and is not heavily interested in this topic.
 ### Simulation
 
 A simpler and more efficient method is to simulate random births. The goal of this simulation is to determine the likelihood of achieving a consensus on the birth ratio if the strategy halts successfully at the optimal stopping point.
+
 ```python
 import random
 
 def max_diff_ratio(min_pop, max_pop, ratio):
     tops = 0
     pops = 0
-    
+
     while pops < min_pop:
         if random.random() < ratio:
             tops += 1
@@ -79,7 +78,7 @@ def max_diff_ratio(min_pop, max_pop, ratio):
 
         if tops / pops > max_ratio:
             max_ratio = tops / pops
-    
+
     return max_ratio
 
 ```
@@ -96,6 +95,3 @@ We run the above simulation for 10,000 times and show the histogram of the resul
 
 The results show that even with the optimal stopping, changing gender ratio for a large population would not be popssible. There are only 27 cases where the ratio difference is greater than 0.00015.
 So yeah, if a group of population has gender ratio at birth which greatly differs from the natural, then it is likely that there are other factors at play. (i.e. abortions, gender-selective infections, etc.)
-
-
-

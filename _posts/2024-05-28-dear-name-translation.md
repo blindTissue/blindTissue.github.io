@@ -7,19 +7,16 @@ tags: for-fun
 featured: false
 ---
 
-K-POP is popular nowadays with BTS, Blackpink, and other groups. My favorite artist is IU. 
+K-POP is popular nowadays with BTS, Blackpink, and other groups. My favorite artist is IU.
 
 She sings all kinds of songs, from ballads to pop songs. Her songs are very popular in Korea but not as much in other countries.
 One of the reasons, I think, is that her songs are very Korean. The lyrics are often times poetic. Often times, the lyrics requires understanding of Korean culture and language.
-
 
 Even then, I think most english translations of her songs don't do justice. So, I decided to translate one of her songs, quite unprofessionally, in English.
 
 Original song: [Dear Name](https://www.youtube.com/watch?v=JSOBF_WhqEM&ab_channel=IU-Topic)
 
-
-
--------------------
+---
 
 The voice that I miss even in my dreams\
 Does not answer even when I call its name\
@@ -63,4 +60,4 @@ I will shout as many times as it takes\
 Even though we are inconceivably far, let's go\
 To that place that this dawn ends.
 
--------------------
+---

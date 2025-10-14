@@ -6,19 +6,17 @@ tags: Machine Learning
 featured: True
 ---
 
-
 ### Outline
 
 With the help of [Huggingface's Transformers](https://huggingface.co/docs/transformers/index), the model architecture and weights of open source models are available to the public.
 
 Methods on Mechanistic Interpretability by [Welch Labs](https://www.youtube.com/watch?v=UGO_Ehywuxc&t=3s&ab_channel=WelchLabs) made me think of a feature in LLM that I was not aware of. The experiments done in the video presupposes that token embedder (tokens to vector translator) and the LM Head (final vector to token logits) are identical.
 
-I checked if this was the case for LMs as I was not familiar with this change. I thought that naturally, the LM head layer and the embedder layer were different. Turns out, it is a widely used method called [weight tying](https://paperswithcode.com/method/weight-tying). 
+I checked if this was the case for LMs as I was not familiar with this change. I thought that naturally, the LM head layer and the embedder layer were different. Turns out, it is a widely used method called [weight tying](https://paperswithcode.com/method/weight-tying).
 
 Because of this characteristic, we can "estimate" the token of the intermediate layer by multiplying intermediate layer's output with the LM head's weight matrix, then taking the argmax of the result. Pretty useful trick for mechanistic interpretability.
 
 So, I played around with this idea. The first question I had was if the LM head's weights were L2 normalized. If the LM head's weights are L2 normalized, then it follows that given token $$t$$, and the head matrix $$W$$, $$t = \text{argmax}(WW^T(t))$$. If this were true, then it would give some solid baseline on future mechanistic interpretability experiments.
-
 
 ### Experiment with Llama 3.2 on L2 Norm
 
@@ -100,7 +98,7 @@ Max
 ```
 Min
 1b: -->
-3b: 
+3b:
 
 
 artisanlib
@@ -127,7 +125,7 @@ def find_mismatch_indices(tot_token_count, model_embedding, lm_head, batch_size=
             original_different_indices.extend(inputs[returned_items != inputs].tolist())
             mismatched_indices.extend(returned_items[returned_items != inputs].tolist())
     return original_different_indices, mismatched_indices
-    
+
 
 original_different_indices_1b, mismatched_indices_1b = find_mismatch_indices(128256, model_1b_embedding, lm_head_1b)
 original_different_indices_3b, mismatched_indices_3b = find_mismatch_indices(128256, model_3b_embedding, lm_head_3b)
@@ -173,7 +171,7 @@ print(count_dict_3b)
 {66325: 482, 528: 1, 738: 1 ...}
 ```
 
-Surprisingly, the majority of the mismatched tokens map to the same token. In the case of 1b, 477 tokens map to token 122456 and in the case of 3b, 482 tokens map to token 66325. 
+Surprisingly, the majority of the mismatched tokens map to the same token. In the case of 1b, 477 tokens map to token 122456 and in the case of 3b, 482 tokens map to token 66325.
 
 ```
 Token 122456: организа
@@ -185,11 +183,3 @@ When I manually skimmed through the tokens mapped to 122456 and 66325, most of t
 If you have any ideas, please let me know. Thanks for reading!
 
 Code can be found [https://github.com/blindTissue/embedding_matrix_experiment](https://github.com/blindTissue/embedding_matrix_experiment)
-
-
-
-
-
-
-
-

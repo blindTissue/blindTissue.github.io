@@ -7,7 +7,6 @@ tags: for-fun math not-rigorous
 featured: true
 ---
 
-
 Zero-sum games are games where the sum of the payoffs of the players is zero. In other words, the gain of one player is the loss of the other. Examples of zero-sum games include chess, poker, and tic-tac-toe.
 
 The zero-sum games that are turn-based can be represented as a tree. The root of the tree is the initial state of the game. Children of a node show the state of the game after a move. The leaves of the tree are the outcomes of the game. We can assign a value to each leaf node to represent the payoff of the game. The value of the leaf node is positive if the first player wins, and negative if the second player wins.
@@ -19,7 +18,6 @@ The intuition behind the minimax algorithm is that both players wishes the worst
 Now assume that we know the probability distribution of the outcomes of the game. The question is, if the outcomes of a zero-sum game are equally likely, is the game "fair"?
 
 Just mind that "proofs" in this post are not rigorous.
-
 
 ### Simple example
 
@@ -35,7 +33,6 @@ Let's start with a simple problem. Consider a complete binary tree of depth 2. F
 
 The last player to move in this game is the second player. The second player would choose min of the two possible moves. The updated tree would be
 
-
 ```
     ?
    / \
@@ -46,7 +43,6 @@ The last player to move in this game is the second player. The second player wou
 
 Now, the first player tries to maximize the value of the node.
 
-
 ```
     0
    / \
@@ -55,48 +51,47 @@ Now, the first player tries to maximize the value of the node.
 1  0 1  0
 ```
 
-The value of the root node is 0. This is a winning game for the second player. 
+The value of the root node is 0. This is a winning game for the second player.
 
 We see that if the leaf nodes are chosen, the outcome of the game is deterministic. Also, minimax algorithm starts from the leaf nodes. For formulation of problem, fixing the last player to move is a good choice.
-
 
 ### Notations
 
 Let's now formalize the notations.
 
-For simplicity, we say the *min* player always moves last. Furthermore, we say that the value of the leaf node is either $$1$$ or $$0$$ with probability $$p_0$$ and $$1 - p_0$$ respectively.
+For simplicity, we say the _min_ player always moves last. Furthermore, we say that the value of the leaf node is either $$1$$ or $$0$$ with probability $$p_0$$ and $$1 - p_0$$ respectively.
 
 We also denote probability $$p_i$$ to be that the node is winning in hieght $$i$$ to the player on that height.
 
 ### Binary Randomized Game Tree
 
-Let's first write a truth table for a *min* player. The table is shown below.
+Let's first write a truth table for a _min_ player. The table is shown below.
 
-|first node | second node | value|
-|---|---|---|
-|1|1|1|
-|1|-1|-1|
-|-1|1|-1|
-|-1|-1|-1|
+| first node | second node | value |
+| ---------- | ----------- | ----- |
+| 1          | 1           | 1     |
+| 1          | -1          | -1    |
+| -1         | 1           | -1    |
+| -1         | -1          | -1    |
 
-Now for the max player, the *truth table* is shown below.
+Now for the max player, the _truth table_ is shown below.
 
-|first node | second node | value|
-|---|---|---|
-|1|1|1|
-|1|-1|1|
-|-1|1|1|
-|-1|-1|-1|
+| first node | second node | value |
+| ---------- | ----------- | ----- |
+| 1          | 1           | 1     |
+| 1          | -1          | 1     |
+| -1         | 1           | 1     |
+| -1         | -1          | -1    |
 
 We see that the truth table is an **or**. A Node is winning for a player if it is not the case that both of its children are losing for the player. So equation can be written as
 
 $$p_{i + 1} = 1 - p_i^2$$
 
-Furthermore, we also see 
+Furthermore, we also see
 
 $$p_{i + 2} = 1 - (1 - p_i^2)^2$$
 
-Let's focus on this equation as it captures the change in winning probability of one player. 
+Let's focus on this equation as it captures the change in winning probability of one player.
 
 #### Properties of the equation.
 
@@ -104,7 +99,7 @@ We first see that if $$p_{i + 2} = p_i$$, then $$p_{i + 2k} = p_{i}$$. The proba
 
 $$p = -p^4 + 2p^2$$
 
-So 
+So
 
 $$p(p - 1)(p^2 + p - 1) = 0$$
 
@@ -114,7 +109,7 @@ Now, what can we say about sequences of $$p_i$$?
 
 {% include figure.liquid loading="eager" path="assets/img/binary_equiv_graph.png" class="img-fluid rounded z-depth-1" %}
 
-We can draw perpendicular lines to find the values of $$p_{x + 2n}$$. 
+We can draw perpendicular lines to find the values of $$p_{x + 2n}$$.
 
 By drawing these lines starting at different initial $$p$$ value, we can see that the values tend to $$0$$ and $$1$$. The sequence only becomes fxed to $$\frac{-1 + \sqrt{5}}{2}$$ if the starting probability is $$\frac{-1 + \sqrt{5}}{2}$$. These kind of points are called divergent fixed points. Lets define function $$f(p) = 1 - (1 - p^2)^2$$.
 
@@ -123,12 +118,10 @@ Proposition
 
 So we can check the convergence by checking the values of the derivative. we see tbat $$f'(0) = 0$$, $$f'(1) = 0$$, $$f'(\frac{-1 + \sqrt{5}}{2}) = 12 - 4\sqrt{5} > 1$$. $$0,1$$ are convergent fixed points. $$\frac{-1 + \sqrt{5}}{2}$$ is a divergent fixed point. So in this case, if $$p_0$$ is not $$ \frac{-1 + \sqrt{5}}{2}$$, then the **probability of winning goes to 0 or 1.**
 
-
-
-An interesting question is the speed of convergence. 
+An interesting question is the speed of convergence.
 
 Proposition
-: if $$p_0 < \frac{-1 + \sqrt{5}}{2}$$, $$K \in \mathbb{N}$$ such that for any $$n \in \mathbb{R}_+$$,  $$ \frac{p_{k + 2}}{p_k} < \frac{1}{n}$$ for all even $$k > K$$.
+: if $$p_0 < \frac{-1 + \sqrt{5}}{2}$$, $$K \in \mathbb{N}$$ such that for any $$n \in \mathbb{R}_+$$, $$ \frac{p\_{k + 2}}{p_k} < \frac{1}{n}$$ for all even $$k > K$$.
 
 Proof
 
@@ -138,7 +131,6 @@ We can show that $$2p_k - p_k^3$$ goes to zero as $$k$$ increases. Thus the rate
 
 Corollary
 : Let $$p_0 < \frac{-1 + \sqrt{5}}{2}$$. Then there does not exist a $$c \in R_+$$ such that for all $$n \in \mathbb{N}$$, $$p_{2n} > \frac{1}{c}^n$$.
-
 
 The convergence speed is pretty fast!
 

@@ -1,8 +1,8 @@
 ---
-layout: redirect
+layout: cv
 permalink: /cv/
-redirect: /assets/pdf/skim_resume_101425.pdf
 title: cv
 nav: true
 nav_order: 5
+cv_pdf: assets/pdf/skim_resume_101425.pdf
 ---

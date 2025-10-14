@@ -1,8 +1,14 @@
 github_users:
-  - blindTissue
+  - torvalds
+  - alshedivat
 
+repo_description_lines_max: 2
 
 github_repos:
-  - blindTissue/Hophacks
-  - blindTissue/NLP-Project
-
+  - alshedivat/al-folio
+  - jekyll/jekyll
+  - twbs/bootstrap
+  - jquery/jquery
+  - FortAwesome/Font-Awesome
+  - mathjax/MathJax
+  - jpswalsh/academicons

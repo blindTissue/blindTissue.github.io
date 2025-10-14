@@ -64,7 +64,7 @@ Min indices 3b: 81259
 3b: yourselves
 </code></pre></div></div> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Min
 1b: --&gt;
-3b: 
+3b:
 
 
 artisanlib
@@ -82,7 +82,7 @@ artisanlib
             <span class="n">original_different_indices</span><span class="p">.</span><span class="nf">extend</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="n">returned_items</span> <span class="o">!=</span> <span class="n">inputs</span><span class="p">].</span><span class="nf">tolist</span><span class="p">())</span>
             <span class="n">mismatched_indices</span><span class="p">.</span><span class="nf">extend</span><span class="p">(</span><span class="n">returned_items</span><span class="p">[</span><span class="n">returned_items</span> <span class="o">!=</span> <span class="n">inputs</span><span class="p">].</span><span class="nf">tolist</span><span class="p">())</span>
     <span class="k">return</span> <span class="n">original_different_indices</span><span class="p">,</span> <span class="n">mismatched_indices</span>
-    
+
 
 <span class="n">original_different_indices_1b</span><span class="p">,</span> <span class="n">mismatched_indices_1b</span> <span class="o">=</span> <span class="nf">find_mismatch_indices</span><span class="p">(</span><span class="mi">128256</span><span class="p">,</span> <span class="n">model_1b_embedding</span><span class="p">,</span> <span class="n">lm_head_1b</span><span class="p">)</span>
 <span class="n">original_different_indices_3b</span><span class="p">,</span> <span class="n">mismatched_indices_3b</span> <span class="o">=</span> <span class="nf">find_mismatch_indices</span><span class="p">(</span><span class="mi">128256</span><span class="p">,</span> <span class="n">model_3b_embedding</span><span class="p">,</span> <span class="n">lm_head_3b</span><span class="p">)</span>

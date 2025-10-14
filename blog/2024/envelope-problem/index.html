@@ -11,20 +11,20 @@
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">tot</span><span class="p">):</span>
     <span class="n">num1</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span>
     <span class="n">num2</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">*</span> <span class="mi">2</span>
-    
+
     <span class="nb">id</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span>
     <span class="k">if</span> <span class="nb">id</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">:</span>
         <span class="n">temp</span> <span class="o">=</span> <span class="n">num1</span>
         <span class="n">num1</span> <span class="o">=</span> <span class="n">num2</span>
         <span class="n">num2</span> <span class="o">=</span> <span class="n">temp</span>
-    
+
     <span class="nb">sum</span> <span class="o">+=</span> <span class="n">num1</span> <span class="o">/</span> <span class="n">num2</span>
     <span class="n">sum_inv</span> <span class="o">+=</span> <span class="n">num2</span> <span class="o">/</span> <span class="n">num1</span>
     <span class="n">num1_sum</span> <span class="o">+=</span> <span class="n">num1</span>
     <span class="n">num2_sum</span> <span class="o">+=</span> <span class="n">num2</span>
     <span class="k">if</span> <span class="n">num1</span> <span class="o">&gt;</span> <span class="n">num2</span><span class="p">:</span>
         <span class="n">num1_big_count</span> <span class="o">+=</span> <span class="mi">1</span>
-    
+
 <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">E[X / Y]: </span><span class="sh">'</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="nb">sum</span> <span class="o">/</span> <span class="n">tot</span><span class="p">))</span>
 <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">E[Y / X]: </span><span class="sh">'</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">sum_inv</span> <span class="o">/</span> <span class="n">tot</span><span class="p">))</span>
 <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">E[X] / E[Y]: </span><span class="sh">'</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">num1_sum</span> <span class="o">/</span> <span class="n">num2_sum</span><span class="p">))</span>

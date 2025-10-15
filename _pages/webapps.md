@@ -7,9 +7,6 @@ nav: true
 nav_order: 7
 ---
 
-## Web Applications
-
-Simple interactive web applications I've built.
 
 ---
 ### Pokemon Type Ranking App

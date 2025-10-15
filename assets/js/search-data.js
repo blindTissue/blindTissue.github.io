@@ -30,6 +30,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
+        },{id: "nav-web-apps",
+          title: "web apps",
+          description: "Simple web applications and interactive tools.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/webapps/";
+          },
         },{id: "post-simple-attention-visualizer",
         
           title: "Simple Attention Visualizer",
@@ -181,8 +188,8 @@ ninja.data = [{
             },},{id: "news-graduated-with-bs-in-computer-science-and-applied-mathematics-and-statistics-from-jhu",
           title: 'Graduated with BS in Computer Science and Applied Mathematics and Statistics from JHU....',
           description: "",
-          section: "News",},{id: "news-graduated-with-masters-in-computer-science-at-the-johns-hopkins-university",
-          title: 'Graduated with Masters in Computer Science at the Johns Hopkins University.',
+          section: "News",},{id: "news-graduated-with-masters-in-computer-science-from-johns-hopkins-university",
+          title: 'Graduated with Masters in Computer Science from Johns Hopkins University.',
           description: "",
           section: "News",},{id: "projects-is-procrustes-alignment-optimal",
           title: 'Is Procrustes Alignment Optimal?',

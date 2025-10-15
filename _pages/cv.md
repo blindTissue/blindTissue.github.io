@@ -5,7 +5,7 @@ title: CV
 nav: true
 nav_order: 5
 cv_pdf: skim_resume_101425.pdf
-description: Download pdf on the right to see my CV :)
+description:
 toc:
   sidebar: left
 ---

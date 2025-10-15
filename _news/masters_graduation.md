@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Graduated with Masters in Computer Science at the Johns Hopkins University.
+Graduated with Masters in Computer Science from Johns Hopkins University.

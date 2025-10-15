@@ -23,26 +23,12 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-projects",
-          title: "projects",
-          description: "A growing collection of your cool projects.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/projects/";
-          },
         },{id: "nav-cv",
           title: "CV",
           description: "Download pdf on the right to see my CV :)",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
-          },
-        },{id: "nav-submenus",
-          title: "submenus",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/_pages/dropdown/";
           },
         },{id: "post-simple-attention-visualizer",
         
@@ -66,9 +52,9 @@ ninja.data = [{
             window.location.href = "/blog/2025/random-exploration-01/";
           
         },
-      },{id: "post-simple-llama-token-embedding-to-model-head-experiment",
+      },{id: "post-llama-token-embedding-to-model-head-experiment",
         
-          title: "Simple Llama Token Embedding to Model Head Experiment",
+          title: "Llama Token Embedding to Model Head Experiment",
         
         description: "Does Same Token Encoded by embeder and then decoded by LM Head Yield Same Result?",
         section: "Posts",

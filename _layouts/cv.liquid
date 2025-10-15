@@ -1,6 +1,10 @@
 ---
 layout: default
 ---
+
+{%- comment -%}
+ORIGINAL CODE - COMMENTED OUT TO SHOW ONLY PDF
+=================================================
 {% unless site.data.resume %}
   <div class="post">
     <header class="post-header">
@@ -125,3 +129,59 @@ layout: default
     </article>
   </div>
 {% endunless %}
+=================================================
+END OF COMMENTED CODE
+{%- endcomment -%}
+
+{%- comment -%} NEW CODE - DISPLAY PDF ONLY {%- endcomment -%}
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      {{ page.title }}
+      {% if page.cv_pdf %}
+        <a
+          {% if page.cv_pdf contains '://' %}
+            href="{{ page.cv_pdf }}"
+          {% else %}
+            href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}"
+          {% endif %}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="float-right"
+        >
+          <i class="fa-solid fa-file-pdf"></i>
+        </a>
+      {% endif %}
+    </h1>
+    {% if page.description %}
+      <p class="post-description">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <article>
+    {% if page.cv_pdf %}
+      <div class="cv-pdf-container" style="width: 100%; height: 100vh;">
+        <iframe
+          {% if page.cv_pdf contains '://' %}
+            src="{{ page.cv_pdf }}"
+          {% else %}
+            src="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}"
+          {% endif %}
+          width="100%"
+          height="100%"
+          style="border: none;"
+        >
+          <p>Your browser does not support PDFs.
+            <a
+              {% if page.cv_pdf contains '://' %}
+                href="{{ page.cv_pdf }}"
+              {% else %}
+                href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}"
+              {% endif %}
+            >Download the PDF</a>
+          </p>
+        </iframe>
+      </div>
+    {% endif %}
+  </article>
+</div>

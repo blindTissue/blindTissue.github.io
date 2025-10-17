@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/webapps/";
           },
-        },{id: "post-simple-attention-visualizer",
+        },{id: "post-knowledge-or-sycophancy",
+        
+          title: "Knowledge or Sycophancy?",
+        
+        description: "Does the AI model know the incorrect answer or is it ignoring to answer the question?",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/knowledge-or-sycophancy/";
+          
+        },
+      },{id: "post-simple-attention-visualizer",
         
           title: "Simple Attention Visualizer",
         
@@ -145,17 +156,6 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2024/properties-of-some-randomized-minimax-game-trees/";
-          
-        },
-      },{id: "post-strategy-for-number-baseball",
-        
-          title: "Strategy for Number Baseball",
-        
-        description: "Is there an optimal strategy for the game Number Baseball?",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2024/optimal-strategy-number-baseball/";
           
         },
       },{id: "post-ranking-pokemon-types",

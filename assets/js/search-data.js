@@ -37,9 +37,20 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/webapps/";
           },
-        },{id: "post-knowledge-or-sycophancy",
+        },{id: "post-random-cosine-similarity-distribution",
         
-          title: "Knowledge or Sycophancy?",
+          title: "Random Cosine Similarity Distribution",
+        
+        description: "What is the distribution of cosine similarities between random vectors in a unit hypersphere?",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/random-cosine-similarity/";
+          
+        },
+      },{id: "post-further-look-into-cancer-myth-is-the-cause-lack-of-knowledge-or-sycophancy",
+        
+          title: "Further Look into Cancer-Myth. Is the Cause Lack of Knowledge or Sycophancy?",
         
         description: "Does the AI model know the incorrect answer or is it ignoring to answer the question?",
         section: "Posts",

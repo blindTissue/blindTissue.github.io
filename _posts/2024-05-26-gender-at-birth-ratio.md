@@ -4,7 +4,7 @@ title: Gender at Birth Ratio
 date: 2024-05-26 14:00:00
 description: Can people's preference affect gender at birth
 tags: for-fun not-rigorous
-featured: true
+featured: false
 ---
 
 ### Introduction

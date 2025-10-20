@@ -4,7 +4,7 @@ title: Induction as a Reduction
 date: 2024-05-30 01:00:00
 description: Generate or Reduce?
 tags: for-fun math not-rigorous
-featured: true
+featured: false
 ---
 
 Induction is a powerful tool in mathematics. The general steps of induction are as follows:

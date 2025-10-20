@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Knowledge or Sycophancy?
+title: Further Look into Cancer-Myth. Is the Cause Lack of Knowledge or Sycophancy?
 date: 2025-10-14
 description: Does the AI model know the incorrect answer or is it ignoring to answer the question?
 tags: Random

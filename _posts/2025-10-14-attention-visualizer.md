@@ -3,8 +3,8 @@ layout: post
 title: Simple Attention Visualizer
 date: 2025-10-14
 description: Simple Attention Visualizer
-tags: Random Code
-featured: False
+tags: Random-Code
+featured: false
 ---
 
 ## Description

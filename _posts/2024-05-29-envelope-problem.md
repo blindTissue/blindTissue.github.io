@@ -4,7 +4,7 @@ title: Two Envelope Problem
 date: 2024-05-29 14:00:00
 description: Switch or not to switch, that is the question.
 tags: for-fun math
-featured: true
+featured: false
 ---
 
 The Two Envelope Proglem is a paradox in probability theory. The problem goes like this:

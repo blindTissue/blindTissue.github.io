@@ -3,7 +3,7 @@ layout: post
 title: Llama Token Embedding to Model Head Experiment
 description: Does Same Token Encoded by embeder and then decoded by LM Head Yield Same Result?
 tags: Machine-Learning
-featured: True
+featured: false
 ---
 
 ### Outline

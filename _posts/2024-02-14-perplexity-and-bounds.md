@@ -4,7 +4,7 @@ title: Bounds for Language Model Perplexity
 date: 2024-02-14 14:00:00
 description: What is perplexity in language modelling and the sensible bounds for it?
 tags: machine-learning
-featured: true
+featured: false
 ---
 
 Language model's quality is often measured by perplexity. In this post, we will derive bounds for perplexity.

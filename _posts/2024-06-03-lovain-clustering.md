@@ -4,7 +4,7 @@ title: Louvain Clustering
 date: 2024-06-03 14:00:00
 description: Maximize Modularity!
 tags: for-fun
-featured: true
+featured: false
 ---
 
 Louvain and Leiden methods are popular for gene clustering. In this post, I will explain the Louvain method.

@@ -28,5 +28,3 @@ Hello! I am Sungwon Kim, and I am currently a research assistant at Johns Hopkin
 
 I have graduated with a BS in Computer Science and Applied Mathematics and Statistics from Johns Hopkins in 2024, and a Masters in Computer Science from Johns Hopkins in 2025.
 
-The website is under reconstruction. Please check back later for more updates!
-

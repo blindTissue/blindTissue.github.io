@@ -84,7 +84,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: 🍱 Quick Bites 🍱 # blog_name will be displayed in your blog page
-blog_description: Small, digestible explorations of ML, math, and random curiosities.
+blog_description: Exploration of bite-size curiosities
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 

@@ -24,7 +24,6 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hello! I am Sungwon Kim, and I am currently a research assistant at Johns Hopkins University. My current research interest is on interpretability. I really want to know how Large Language Models work internally. 
+Hello! I am Sungwon Kim, and I am currently a research assistant at Johns Hopkins University. My current research interest is on interpretability. I really want to know how Large Language Models work internally.
 
 I have graduated with a BS in Computer Science and Applied Mathematics and Statistics from Johns Hopkins in 2024, and a Masters in Computer Science from Johns Hopkins in 2025.
-

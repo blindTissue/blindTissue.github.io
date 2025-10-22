@@ -44,7 +44,6 @@ plt.ylabel("Frequency")
 plt.show()
 ```
 
-
 The histogram looks like below.
 {% include figure.liquid loading="eager" path="assets/img/random-cosine-similarity/2d_cosine_similarities.png" class="img-fluid rounded z-depth-1" %}
 
@@ -74,13 +73,10 @@ def random_point_on_unit_sphere(n: int) -> np.ndarray:
 
 Using this function, I plotted the histogram of cosine similarities in 3D, 10D, 100D, 1000D below.
 {% include figure.liquid loading="eager" path="assets/img/random-cosine-similarity/higher_dim_cos.png" class="img-fluid rounded z-depth-1" %}
-As dimension increases, the cosine similarities are more concentrated around 0. For 100D, there is no sample with cosine similarity greater than .3 among 10,000 samples. 
-
-
+As dimension increases, the cosine similarities are more concentrated around 0. For 100D, there is no sample with cosine similarity greater than .3 among 10,000 samples.
 
 Another interesting observation is that in 3 dimension, the distribution looks uniform. GPT5 shows that it is indeed uniform in 3D case. In fact, it showed that the distribution of the cosine similarity of dimension $$d$$ follows a Beta distribution with parameters $$(\frac{d-1}{2}, \frac{d-1}{2})$$ [link](https://chatgpt.com/share/68f59365-b6c8-8009-8de4-b1cb8a46b5f5).
 
 ### Implications for Embeddings
 
 Text embedding models often assign cosine similarities above 0.7 to similar documents. In high-dimensional spaces (common embeddings use 384, 768, or 1536 dimensions), such high cosine similarities are extremely rare between random vectors. This means that semantically similar texts must have embeddings that are highly aligned in the embedding space, far from the random baseline.
-

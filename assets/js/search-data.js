@@ -48,9 +48,9 @@ ninja.data = [{
             window.location.href = "/blog/2025/random-cosine-similarity/";
           
         },
-      },{id: "post-further-look-into-cancer-myth-is-the-cause-lack-of-knowledge-or-sycophancy",
+      },{id: "post-further-look-into-cancer-myth-does-the-llm-ignore-false-presupposition-due-to-lack-of-knowledge-or-is-it-sycophantic",
         
-          title: "Further Look into Cancer-Myth. Is the Cause Lack of Knowledge or Sycophancy?",
+          title: "Further Look into Cancer-Myth. Does the LLM Ignore False Presupposition Due to Lack...",
         
         description: "Does the AI model know the incorrect answer or is it ignoring to answer the question?",
         section: "Posts",

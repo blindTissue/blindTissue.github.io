@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Torch MPS Basic Speedup Test
-date: 2025-10-19
+date: 2025-10-22
 description: A basic speedup test of PyTorch on MPS (Apple Silicon) vs CPU.
 tags: machine-learning
 featured: False
@@ -17,10 +17,11 @@ Based on [this video](https://www.youtube.com/watch?v=IAEysH-6VvM).
 ## tl;dr
 
 Keep tensors on GPU from the start, vectorize everything, avoid dynamic shapes.
+Code can be found [here](https://github.com/blindTissue/torch_mps_speedup_test)
 
 ## What's tested
 
-- **Creating tensors**: CPU � GPU vs creating directly on GPU
+- **Creating tensors**: CPU to GPU vs creating directly on GPU
 - **Runtime constants**: Dynamic tensor creation vs `register_buffer`
 - **Masking**: Different masking approaches (indexing vs vectorized ops)
 - **DataLoader**: `pin_memory` and `non_blocking` flags

@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/webapps/";
           },
-        },{id: "post-random-cosine-similarity-distribution",
+        },{id: "post-torch-mps-basic-speedup-test",
+        
+          title: "Torch MPS Basic Speedup Test",
+        
+        description: "A basic speedup test of PyTorch on MPS (Apple Silicon) vs CPU.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/torch-mps-speedup-test/";
+          
+        },
+      },{id: "post-random-cosine-similarity-distribution",
         
           title: "Random Cosine Similarity Distribution",
         

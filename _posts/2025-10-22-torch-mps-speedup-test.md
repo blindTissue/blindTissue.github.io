@@ -17,7 +17,7 @@ Based on [this video](https://www.youtube.com/watch?v=IAEysH-6VvM).
 ## tl;dr
 
 Keep tensors on GPU from the start, vectorize everything, avoid dynamic shapes.
-Code can be found [here](https://github.com/blindTissue/torch_mps_speedup_test)
+Code can be found [here](https://github.com/blindTissue/torch_mps_speedup_test).
 
 ## What's tested
 
@@ -58,12 +58,5 @@ Code can be found [here](https://github.com/blindTissue/torch_mps_speedup_test)
    ```
    Note: `pin_memory` doesn't help on MPS (not supported yet)
 
-## Run it yourself
-
-```bash
-python examples.py
-```
-
-You need PyTorch with MPS support (Mac with Apple Silicon).
 
 

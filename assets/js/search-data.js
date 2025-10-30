@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/webapps/";
           },
-        },{id: "post-torch-mps-basic-speedup-test",
+        },{id: "post-paper-review-of-old-nlp-papers",
+        
+          title: "Paper Review of Old NLP Papers",
+        
+        description: "A review of influential old papers in natural language processing.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/old-paper-reviews/";
+          
+        },
+      },{id: "post-torch-mps-basic-speedup-test",
         
           title: "Torch MPS Basic Speedup Test",
         

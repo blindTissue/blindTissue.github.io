@@ -45,9 +45,9 @@ $$\mathbf{R}^k \cdot PE_{pos} = PE_{pos+k}$$
 
 Such rotational matrix can be created by the following block diagonal matrix. 
 
-\[R_i^k = \begin{pmatrix}\cos k / 10000^{2i/ d_{model}} & -\sin k / 10000^{2i/ d_{model}}\\ \sin k / 10000^{2i/ d_{model}}& \cos k / 10000^{2i/ d_{model}}\end{pmatrix}\]
+$$R_i^k = \begin{pmatrix}\cos k / 10000^{2i/ d_{model}} & -\sin k / 10000^{2i/ d_{model}}\\ \sin k / 10000^{2i/ d_{model}}& \cos k / 10000^{2i/ d_{model}}\end{pmatrix}$$
 
-\[
+$$
 \mathbf{R}^k =
 \begin{pmatrix}
 R_0 & & & \\
@@ -55,7 +55,7 @@ R_0 & & & \\
 & & \ddots & \\
 & & & R_{d_{model}/2}
 \end{pmatrix}.
-\]
+$$
 
 I thought that this formulation wasn't that great. I thought that a formulation where 
 
@@ -78,26 +78,26 @@ For the base transformer implementation, I used the Andrej Karpathy's [minGPT](h
 
 There was a minor difficulty in implemnting the Bahdanau Attention. The original attention mecahnism in the paper (Which connects encoder with decoder) uses the following 
 
-\[
+$$
     \alpha_{ij} = \frac{\exp(e_{ij})}{\sum_{k=1}^{T_x} \exp(e_{ik})} \quad \\
     e_{ij} = v_a^T \tanh(W_a s_{i - 1} + U_a h_j)
-\]
+$$
 
 where $$v_a \in \mathbb{R}^n$$, $$W_a \in \mathbb{R}^{n \times m}$$, $$U_a \in \mathbb{R}^{n \times 2m}$$. The actual implementation is interesting. You should take a look into it in the [original paper](https://arxiv.org/pdf/1409.0473).
 
 To fit this implementation to Transformers, I modified the equation a bit.
-\[
+$$
     e_{ij} = vx_i\tanh(W_q x_i + W_k x_j)
-\]
+$$
 where $$v \in \mathbb{R}^{head\_size}$$, $$W_q \in \mathbb{R}^{head\_size \times head\_size}$$, $$W_k \in \mathbb{R}^{head\_size \times head\_size}$$.
 
 Notice that $$v$$ here is a 1d vector instead of a matrix as in transformer. This was a design choice by me to be closer to the original Bahdanau attention. The $$q,k$$ vectors are same as the original transformer. 
 
 But this approach takes up too much memory in parallel computation. We need to materialize matrix of (B, T, T, head_size) tensor to parallelize adding the $$q,k$$ vectors. So I used an alternative implementation.
 
-\[
+$$
     e_{ij} = v(\tanh(W_q x_i)) + v(\tanh(W_k x_j))
-\]
+$$
 
 This way, we do not need to materialize the full (B, T, T, head_size) tensor. The two implemtations are not equivalent, but I think this is a reasonable approximation.
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Paper Review of Old NLP Papers
-date: 2025-10-30
+date: 2025-11-01
 description: A review of influential old papers in natural language processing.
 tags: machine-learning
 featured: True
@@ -142,7 +142,7 @@ This method worked better than standard few-shot prompting, especially as the mo
 
 The authors hypothesize that the ability to reason might be an emergent behavior with model size.
 
-{% include figure.liquid loading="eager" path="assets/img/assets/img/paper_review/chain_of_thought/chain_of_thought_results.png" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid loading="eager" path="assets/img/paper_review/chain_of_thought/chain_of_thought_results.png" class="img-fluid rounded z-depth-1" %}
 
 ### Additional Tests
 

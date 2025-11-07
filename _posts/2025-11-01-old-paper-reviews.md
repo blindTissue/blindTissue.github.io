@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Paper Review of Old NLP Papers
+title: Old NLP Paper Reviews
 date: 2025-11-01
 description: A review of influential old papers in natural language processing.
 tags: machine-learning
@@ -17,7 +17,7 @@ Written in Oct 30, 2025
 
 Many people consider this the landmark paper that ignited the Transformer revolution.
 
-$$ \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V $$
+$$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V $$
 
 This is the mechanism that started it all. Much have changed since then: I will focus on what I found interesting when reading the paper again.
 

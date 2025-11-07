@@ -37,9 +37,20 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/webapps/";
           },
-        },{id: "post-paper-review-of-old-nlp-papers",
+        },{id: "post-showcase-of-emnlp-sycophancy-paper",
         
-          title: "Paper Review of Old NLP Papers",
+          title: "Showcase of EMNLP Sycophancy Paper",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/EMNLP-sycophancy-papers/";
+          
+        },
+      },{id: "post-old-nlp-paper-reviews",
+        
+          title: "Old NLP Paper Reviews",
         
         description: "A review of influential old papers in natural language processing.",
         section: "Posts",

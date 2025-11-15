@@ -72,11 +72,11 @@ I personally find this formulation elegant but slightly lacking. We can express 
 
 $$\mathbf{R}^k \times PE_{pos} + emb = PE_{pos + k} + emb$$
 
-However, the attention mechanism is not additive. It uses dot product attention. Thus the following would have made more sense.
+However, the attention mechanism is not additive. It uses dot product attention, and capturing additive positional difference seems unaligned to me. I would consider the following to be more intutive.
 
 $$\mathbf{F}(P(x,pos), k) = P(x, pos + k)$$
 
-$$P(x, pos)$$ here is a function that encodes the position $$pos$$ and token embedding $$x$$ together. A position encoding should have some function $$\mathbf{F}$$ that allows shifting the position by $$k$$ when applied. Rotary Position Embeddings [(RoPE)](https://arxiv.org/pdf/2104.09864) satisfy this property.
+$$P(x, pos)$$ here is a function that encodes the position $$pos$$ and token embedding $$x$$ together. A position encoding should have some function $$\mathbf{F}$$ that allows shifting the position by $$k$$ when applied. This too, however, is counte to the linear [additive nature](https://transformer-circuits.pub/2021/framework/index.html) of the transformers. Thus one might want a position embedding that keeps the latent representation additive while making attention mechanism rotational. Rotary Position Embeddings [(RoPE)](https://arxiv.org/pdf/2104.09864) satisfy this property.
 
 The paper also notes that replacing the sinusoidal embedding with a **learnable** one barely affects performance.
 

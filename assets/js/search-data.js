@@ -37,9 +37,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/webapps/";
           },
-        },{id: "post-showcase-of-emnlp-sycophancy-paper",
+        },{id: "post-showcase-of-emnlp-sycophancy-papers",
         
-          title: "Showcase of EMNLP Sycophancy Paper",
+          title: "Showcase of EMNLP Sycophancy Papers",
         
         description: "",
         section: "Posts",

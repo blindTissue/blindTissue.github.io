@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Showcase of EMNLP Sycophancy Paper
+title: Showcase of EMNLP Sycophancy Papers
 date: 2025-11-07
 description: 
 tags: LLM

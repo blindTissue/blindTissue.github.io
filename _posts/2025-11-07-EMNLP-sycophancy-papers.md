@@ -9,7 +9,7 @@ featured: True
 
 The EMNLP 2025 papers are [out](https://aclanthology.org/events/emnlp-2025/)! Congrats to everyone who had their papers accepted.
 
-As an accepted author myself, I decided to explore other papers that examined my paper’s topic: **LLM Sycophancy**. Below are a few highlights and summaries of their main contributions.
+As an accepted author myself, I decided to explore other papers that examined my paper’s topic: **LLM Sycophancy**. Below are a few bullet points for each paper.
 
 ## [Self-Augmented Preference Alignment for Sycophancy Reduction in LLMs](https://aclanthology.org/2025.emnlp-main.625)
 

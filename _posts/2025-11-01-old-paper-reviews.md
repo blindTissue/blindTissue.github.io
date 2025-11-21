@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Old NLP Paper Reviews
-date: 2025-11-01
+date: 2025-11-21
 description: A review of influential old papers in natural language processing.
 tags: machine-learning
 featured: True

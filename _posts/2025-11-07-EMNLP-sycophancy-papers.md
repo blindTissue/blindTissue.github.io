@@ -2,7 +2,7 @@
 layout: post
 title: Showcase of EMNLP Sycophancy Papers
 date: 2025-11-07
-description: 
+description:
 tags: LLM
 featured: True
 ---
@@ -15,9 +15,11 @@ As an accepted author myself, I decided to explore other papers that examined my
 
 <!-- ### Abstract
 Sycophancy leads models to produce answers that cater to user expectations rather than truth. This behavior can erode trust by creating a perception of bias or dishonesty, prompting users to question a system’s reliability and objectivity. Although RLHF is effective for aligning models with human preferences, prior work has found that it can also amplify sycophancy. Most of those studies, however, examined proprietary models and relied on indirect analyses of human feedback. In contrast, our study focuses on open‑source models to enable transparent, reproducible investigation. We directly compare models aligned with human feedback to those without such alignment to assess the impact on sycophancy. Rather than ignoring the user’s expected answer, we propose explicitly assessing it. To this end, we introduce the Sycophancy Answer Assessment (SAA) dataset and Self‑Augmented Preference Alignment, and show that these methods improve assessment ability and significantly reduce sycophancy across tasks. -->
+
 {% include figure.liquid loading="eager" path="assets/img/emnlp_sycophancy/SAA_dataset.png" class="img-fluid rounded z-depth-1" %}
+
 - Created **SAA** dataset, which contains queries with user pressumption, correct answer, and incorrect alternatives.
-    - The pressumptions are sometimes correct and sometimes incorrect.
+  - The pressumptions are sometimes correct and sometimes incorrect.
 - Trained LLM with SAA using Supervised Fine Tuning and Proximal Policy Optimization. Results show that in both scenarios, the rate of sycophancy decreased.
 - I wonder if model trained with SAA works with out of domain pressumptions. the examples in the dataset are simple: they are single turn and the prompts pertain to simple questions.
 
@@ -31,11 +33,10 @@ To make interactions consistent, reliable and safe, we introduce X-Agent, an Ove
 {% include figure.liquid loading="eager" path="assets/img/emnlp_sycophancy/x_agent.png" class="img-fluid rounded z-depth-1" %}
 
 - Created a framework called **X-Agent**, an agent that checks for sycophancy in LLM responses.
-- Their **X-Agent** successfully detects sycophantic responses, 
-    - Defined sycophancy as when LLM accepts incorrect user presupposition.
-    - Overall accuracy with X-Agent increased in most LLMs.
+- Their **X-Agent** successfully detects sycophantic responses,
+  - Defined sycophancy as when LLM accepts incorrect user presupposition.
+  - Overall accuracy with X-Agent increased in most LLMs.
 - The models fine tuned on the X-Agent rollout also improved performance for both accuracy and sycophancy
-
 
 {% include figure.liquid loading="eager" path="assets/img/emnlp_sycophancy/x_agent_results.png" class="img-fluid rounded z-depth-1" %}
 
@@ -43,35 +44,34 @@ To make interactions consistent, reliable and safe, we introduce X-Agent, an Ove
 
 {% include figure.liquid loading="eager" path="assets/img/emnlp_sycophancy/smart_framework.png" class="img-fluid rounded z-depth-1" %}
 
-- Created a **SMART** (Sycophancy Mitigate Through Adaptive Reasoning Trajectories) Framework 
-    - Smart uses UA-MCTS(Uncertainty-Aware Adaptive Monte Carlo Tree Search) to generate high quality reaoning trajectory
-    - In each reasoning step, future rollouts are created and scored based on the improvement of answer correctness probability compared to the last step.
+- Created a **SMART** (Sycophancy Mitigate Through Adaptive Reasoning Trajectories) Framework
+  - Smart uses UA-MCTS(Uncertainty-Aware Adaptive Monte Carlo Tree Search) to generate high quality reaoning trajectory
+  - In each reasoning step, future rollouts are created and scored based on the improvement of answer correctness probability compared to the last step.
 - The rollouts with scores are then used to train Large Language Models.
-    - The implementation outperforms other approaches.
-    - Dense Reinforcement Learning on the rollouts outperforms SFT.
+  - The implementation outperforms other approaches.
+  - Dense Reinforcement Learning on the rollouts outperforms SFT.
 
 ## [Pointing to a Llama and Call it a Camel On the Sycophancy of Multimodal Large Language Models](https://aclanthology.org/2025.emnlp-main.1020.pdf)
 
 {% include figure.liquid loading="eager" path="assets/img/emnlp_sycophancy/SRT_framework.png" class="img-fluid rounded z-depth-1" %}
 
-- Multimodal Large Language Models are more susceptible to Sycophancy compared to Large Language Models. 
-- Created a pipeline called **SRT** (Sycophancy Reflective Tuning). 
-    - This pipeline consists of image textualization -> reflection -> Summarization.
-- Fine tuning on the SRT rollout resulted in better overall score compared to original prompting. 
-    - Correction Rate (original answer incorrect, user suggestion correct) was reduced slightly, but Sycophancy Rate (original answer correct, user suggestion incorrect) increased considerably. 
-    - Removing reasoning in SRT results in low Correction Rate.
-
+- Multimodal Large Language Models are more susceptible to Sycophancy compared to Large Language Models.
+- Created a pipeline called **SRT** (Sycophancy Reflective Tuning).
+  - This pipeline consists of image textualization -> reflection -> Summarization.
+- Fine tuning on the SRT rollout resulted in better overall score compared to original prompting.
+  - Correction Rate (original answer incorrect, user suggestion correct) was reduced slightly, but Sycophancy Rate (original answer correct, user suggestion incorrect) increased considerably.
+  - Removing reasoning in SRT results in low Correction Rate.
 
 ## [Measuring Sycophancy of Language Models in Multi-turn Dialogues](https://aclanthology.org/2025.findings-emnlp.121.pdf)
 
 {% include figure.liquid loading="eager" path="assets/img/emnlp_sycophancy/sycon_bench.png" class="img-fluid rounded z-depth-1" %}
+
 - Authors proposed a benchmark called **SYCON-BENCH**, a benchmark for evaluating sycophantic behavior in multi-turn, free-form conversational settings
 - Alignment Tuning increases sycophancy
 - Model scaling reduces sycophancy
 - Reasoning Models are More Robust
-- Prompting in third person, creating a *Non-sycophantic* prompt can mitigate sycophancy
+- Prompting in third person, creating a _Non-sycophantic_ prompt can mitigate sycophancy
 - Models can identify sycophancy when asked to, but are often sycophantic. This shows that sycophancy is not driven by ignorance.
-
 
 ## [Challenging the Evaluator: LLM Sycophancy Under User Rebuttal](https://aclanthology.org/2025.findings-emnlp.1222.pdf)
 
@@ -84,9 +84,10 @@ To make interactions consistent, reliable and safe, we introduce X-Agent, an Ove
 - While casual prompt results in the best persuasion rate, the best correction rate is given when LLM is prompted as a judge.
 
 ## [Echoes of Agreement: Argument Driven Sycophancy in Large Language Models](https://aclanthology.org/2025.findings-emnlp.1241.pdf)
+
 {% include figure.liquid loading="eager" path="assets/img/emnlp_sycophancy/echos_agreement.png" class="img-fluid rounded z-depth-1" %}
 
 - LLMs are likely to echo user's presented stance
 - LLMs tend to agree more when supporting arguments were provided and disagree more when refuting arguments were provided.
 - LLMs are likely to change their stance both in single and multi turn settings.
-- LLMs are more likely to change their stance for arguments with "better" strength. 
+- LLMs are more likely to change their stance for arguments with "better" strength.

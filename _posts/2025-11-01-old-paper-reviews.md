@@ -181,3 +181,50 @@ Chain of Thought had a great impact on LLMs, affecting the prompting strategies 
 This is an instance where human understanding of the world have improved ML model. Prompting and training models on how humans think resulted in a better model performance, counter to the spirit of [bitter lesson](http://www.incompleteideas.net/IncIdeas/BitterLesson.html), which argues that progress in AI comes from building system that learn on that own, not from encoding what we know.
 
 Maybe Chain of Thought style training will hit a wall in the near future. Of course, there are alternatives such as teaching the models to [reason in latent space](https://arxiv.org/pdf/2412.06769).
+
+## [ROFORMER: ENHANCED TRANSFORMER WITH ROTARY POSITION EMBEDDING](https://arxiv.org/abs/2104.09864)
+
+Written in Nov 21, 2025
+
+Rotary Positional Embedding (RoPE) is practically used in all modern LLMs. Llama, Qwen, and even the recent [Olmo3](https://www.datocms-assets.com/64837/1763662397-1763646865-olmo_3_technical_report-1.pdf) all use it. This paper introduced this embedding.
+
+### What is RoPE?
+
+Simply put, instead of adding a sinusodial position embedding to the $$x$$ vector, as done in the original transformer paper, The rotation is _applied_ to the $$q,k$$ vectors.
+
+{% include figure.liquid loading="eager" path="assets/img/paper_review/roformer/RoPE_banner.png" class="img-fluid rounded z-depth-1" %}
+
+This creates some interesting properties.
+
+### Theoretical Explanation of RoPE
+
+Section 3.4 explains the validity of the RoPE. It requires the unnormalized attention values $$q_m k_n$$ to
+
+1. Be same if the distance ($$n-m$$) are the same.
+2. Be the original values of $$q,k$$ if $$m, n$$ are zero.
+
+The paper shows that their formulation of Rotary Position embedding satisfies this property.
+
+They also show an upper bound for this value to be $$\left( \max_i \lvert h_{i+1} - h_i \rvert \right) \sum_{i=0}^{\frac{d}{2}-1} \lvert S_{i+1} \rvert$$, showing that the dot product reduces with more distance.
+
+### Paper's Performance Results of RoPE
+
+The paper shows effectiveness of RoPE by comparing its performance with sinnusodial position embedding in the original attention paper. The result is as follows.
+
+{% include figure.liquid loading="eager" path="assets/img/paper_review/roformer/loss.png" class="img-fluid rounded z-depth-1" %}
+
+The right graph compares RoFormer to a standard BERT baselline (using learned absolute embedding). The graph on the left uses _PerFormer_, a linear attention.
+
+This result is the one that surprised me the most when reading this paper. I expected the loss to be more drastic, as RoPE is currently used in virtually all of Transformers. The results show a measly increase in performance, an increase where in some eyes, might be just because of luck instead of actual improvement. Same can be said for result on downstream tasks, where learned positional embedding perform better than RoFormer (Their postional embedded transformer) in some tasks.
+
+### Additional Experiment.
+
+The paper argues that their method have a long distance decay. They argue that by proving that the expression is bounded above by $$\left( \max_i \lvert h_{i+1} - h_i \rvert \right) \sum_{i=0}^{\frac{d}{2}-1} \lvert S_{i+1} \rvert$$. However, their graph only lasts up to around position ~260. What happens for longer sequencs? Does the relative upper bound go to zero, or does it stay stable? In some chance, the upper bound can increase after some time.
+
+{% include figure.liquid loading="eager" path="assets/img/paper_review/roformer/continued_upper.png" class="img-fluid rounded z-depth-1" %}
+
+The graph suggest that the upper bounda stays stable (for d = 64) from 2 to 6 for 2000+ positions.
+
+### Personal Thoughts
+
+When I decided to read this paper, I was expecting a monumental increase in performance, or a quality, such as decreased performance degradation over time, for Rotary Position Embedding. In fact, there should be a reason behind why all transformers use RoPE. However, this wasn't the case. The results showed that their embedding is extrapolatable to longer distance, but didn't do a short context learning -> long context training, or show a drastic increase in performance compared to previous embedding mechanism.

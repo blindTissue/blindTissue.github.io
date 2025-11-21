@@ -37,18 +37,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/webapps/";
           },
-        },{id: "post-showcase-of-emnlp-sycophancy-papers",
-        
-          title: "Showcase of EMNLP Sycophancy Papers",
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/EMNLP-sycophancy-papers/";
-          
-        },
-      },{id: "post-old-nlp-paper-reviews",
+        },{id: "post-old-nlp-paper-reviews",
         
           title: "Old NLP Paper Reviews",
         
@@ -57,6 +46,17 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2025/old-paper-reviews/";
+          
+        },
+      },{id: "post-showcase-of-emnlp-sycophancy-papers",
+        
+          title: "Showcase of EMNLP Sycophancy Papers",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/EMNLP-sycophancy-papers/";
           
         },
       },{id: "post-torch-mps-basic-speedup-test",

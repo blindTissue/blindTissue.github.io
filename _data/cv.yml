@@ -1,97 +1,165 @@
 - title: General Information
   type: map
   contents:
-    - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
+    - name: Name
+      value: Sungwon Kim
+    - name: Position
+      value: Research Assistant under Professor Daniel Khashabi, Johns Hopkins University
+    - name: Links
+      links:
+        - name: GitHub
+          link: https://github.com/blindTissue
+        - name: Google Scholar
+          link: https://scholar.google.com/citations?user=H2ResUgAAAAJ
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Masters in Computer Science
+      institution: Johns Hopkins University, Baltimore, MD
+      year: 2025
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - Graduated with Computer Science Masters at Johns Hopkins University.
+    - title: BS Computer Science, Applied Mathematics & Statistics
+      institution: Johns Hopkins University, Baltimore, MD
+      year: 2024
       description:
-        - Description 1.
-        - Description 2.
+        - "GPA: 3.90/4.0"
+        - "Course Assistant for NLP: Self-supervised Models, Natural Language Processing, Introduction to Algorithms, Automata and Computation Theory, Discrete Math."
+        - "Math Tournament Problem Writer: ASDAN, JHMT (Johns Hopkins Math Tournament)."
 
-- title: Experience
+- title: Publications
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: "Afterglow: Forward Span Propagation for Query-Aware KV Cache Eviction"
+      institution: Submitted to NAACL 2027
+      year: 2026
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Improves published query-aware KV cache eviction by propagating high attention score with decay to later tokens.
+        - Currently scores first in kvpress leaderboard for query-aware single pass eviction method.
+    - title: "VFold: Symmetry-Aware Cross-Layer Value Cache Compression"
+      institution: Submitted to ICLR 2027
+      year: 2026
       description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
+        - Inter-layer cache merging algorithm that exploits cross-layer redundancy.
+    - title: Sparse Attention with Entropy-Triggered KV Repair
+      institution: Submitted to ICLR 2027
+      year: 2026
       description:
+        - Entropy triggered sparse attention cache rebuild for accurate responses.
+    - title: "Recovering Collapsed Language Models in Weight Space Without External Data"
+      institution: Submitted to EACL 2027
+      year: 2026
+      description:
+        - Experimented multi-model feedback loop and confirmed that model collapse appears in this scenario.
+        - Found that collapse is locally reversible via task vector negation.
+    - title: '<a href="https://openreview.net/forum?id=eAMLpW74rV">What Survives Eviction? Information Recall Locality in Transformer KV Caches</a>'
+      institution: Accepted to TMLR, 2026
+      year: 2026
+      description:
+        - Explored cache locality in information retrieval.
+    - title: '<a href="https://openreview.net/forum?id=YnyrQE7O7C">BiomedBench Suite: Benchmarks for Evaluating LLM Performance on Biomedical Reasoning Tasks</a>'
+      institution: Accepted to ICML 2026 Workshop
+      year: 2026
+    - title: '<a href="https://openreview.net/forum?id=SC7liryuqr">BiomedSQL: Text-to-SQL for Scientific Reasoning on Biomedical Knowledge Bases</a>'
+      institution: Accepted to COLM 2026
+      year: 2026
+      description:
+        - Dataset for evaluating scientific reasoning in text-to-SQL generation over a real-world biomedical knowledge base.
+    - title: '<a href="https://www.sciencedirect.com/science/article/pii/S2589750025001256">CARDBiomedBench: A Benchmark for Evaluating Large Language Model Performance in Biomedical Research</a>'
+      institution: Lancet Digital Health, 2026
+      year: 2026
+      description:
+        - Large Scale Question and Answer Benchmark for evaluating LLMs in biomedical science.
+    - title: '<a href="https://aclanthology.org/2025.findings-emnlp.1222/">Challenging the Evaluator: LLM Sycophancy Under User Rebuttal</a>'
+      institution: Accepted to EMNLP 2025 Findings
+      year: 2025
+      description:
+        - Investigated qualities that trigger LLM sycophancy under user rebuttal.
 
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
+- title: Work Experience
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: Research Assistant
+      institution: Johns Hopkins University, Baltimore, MD
+      year: 2025 - now
+      description:
+        - Research Assistant under Professor Daniel Khashabi
+    - title: Part Time
+      institution: DataTechnica, Bethesda, MD
+      year: 2024
+      description:
+        - Engineered a medical RAG(Retrieval Augmented Generation) pipeline. Implementing various methods for SQL retrieval including chain-of-thought reasoning and self-consistency.
+        - Helped create datasets and evaluation metrics for medical questions.
+    - title: Research Intern
+      institution: National Institutes of Health, Bethesda, MD
+      year: 2024
+      description:
+        - Worked on natural language to SQL query pipeline that scales sublinearly to the number of columns
+        - Achieved 5% increase in accuracy (80% to 85%) compared to vanilla schema-as-context methods.
+    - title: Research Assistant
+      institution: Center for Language and Speech Processing, Baltimore, MD
+      year: 2023 - 2024
+      description:
+        - Created chatbots which cite databases for a web based app.
+        - Developed and tested various retrieval methods including dense, sparse, hybrid retrieval methods, chunking strategies, LLM fine tuning, for robust search using Huggingface, sbert, Apache Solr, nltk, and more.
+    - title: Research Assistant
+      institution: Johns Hopkins University, Baltimore, MD
+      year: 2023
+      description:
+        - Created neural network-derived brain perfusion map processing pipeline for model-free CTP images.
+        - Achieved up to 30% better MSE loss compared to a recent paper on the same dataset.
+    - title: Information Systems Maintenance/Operator, Squad Leader
+      institution: Republic of Korea Army, Yanggu, Korea
+      year: 2020 - 2022
+      description:
+        - Maintained and operated secure military information systems to ensure reliable communication of sensitive data.
+        - Appointed Squad Leader in June of 2021.
+    - title: Platform Analyst (Intern)
+      institution: Nexon Korea, Pangyo, Korea
+      year: 2020
+      description:
+        - Analyzed game data logs using SQL, Hadoop, and Python.
+        - Built ML model (Random Forest, LSTM, XGBoost) to classify player experience levels, improving accuracy by 15%+ over a Markov Chain baseline.
 
-- title: Honors and Awards
+- title: Projects
   type: time_table
   contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
+    - title: Logit Lens Llama Advanced
+      year: 2025 - now
+      description:
+        - Created an interactive version of Logit Lens, where users can intervene on residual, attention and FFN stream, on a per-layer, per-head basis.
+    - title: Embedding-Level Translation for Seamless Communication Across LLM Agents
+      year: 2024
+      description:
+        - Developed an embedding-level translator to enable seamless communication between LLM agents, achieving <0.01 MSE and >0.9 cosine similarity, demonstrating high-fidelity translation across agent representations.
+    - title: <a href="https://github.com/blindTissue/CSS_final_project">Linear Embedding Space Alignment for Semantic Change Detection</a>
+      year: 2024
+      description:
+        - Explored limitations of the Procrustes alignment method for detecting domain shifts in semantic spaces over time.
+        - Proposed and evaluated alternative linear alignment techniques using unsupervised anchor discovery, tested on a machine translation benchmark.
+        - Found that while methods varied in approach, no significant performance difference was observed across alignment strategies.
+    - title: arXiv Reference Finder (Hophacks - 2nd Place Winner)
+      year: 2023
+      description:
+        - Built a tool to extract and highlight relevant sections from referenced papers on arXiv, given a source paper.
+        - Utilized BM25 and cross-encoders for semantic similarity; integrated arXiv API and applied regex-based PDF chunking and formatting.
+    - title: Custom Transformers
+      year: 2023
+      description:
+        - Implemented transformer layers with non-standard architectures.
+        - Achieved lower classification loss than HuggingFace BERT, despite using fewer parameters.
+    - title: Misc Game Tools (Toys)
+      year: 2020 - 2022
+      description:
+        - Designed an Excel-based Markov chain model to calculate expected costs of in-game equipment upgrades.
+        - Developed a course planner to track and store all Johns Hopkins University course data locally.
+        - Created a Pokémon battle damage calculator and derived a custom method for type ranking analysis.
 
-- title: Academic Interests
-  type: nested_list
+- title: Skills
+  type: map
   contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
-  type: list
-  contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - name: Programming
+      value: Python, Pytorch, HuggingFace Transformers, scikit-learn, pandas, numpy, C++
+    - name: Software/Skill set
+      value: LaTeX, SQL, Microsoft Office (Excel, PowerPoint, Word, Outlook)

@@ -11,7 +11,7 @@ profile:
   more_info: >
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: false # includes social icons at the bottom of the page
+social: true # includes social icons at the bottom of the page
 
 announcements:
   enabled: true # includes a list of news items
@@ -24,6 +24,6 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hello! I am Sungwon Kim, and I am currently a research assistant at Johns Hopkins University. My current research interest is on interpretability. I really want to know how Large Language Models work internally.
+Hello! I am Sungwon Kim, and I am currently a research assistant at Johns Hopkins University. My current research focuses on KV cache efficiency for large language models: eviction, compression, and sparse attention. I'm also open to exploring other directions.
 
 I have graduated with a BS in Computer Science and Applied Mathematics and Statistics from Johns Hopkins in 2024, and a Masters in Computer Science from Johns Hopkins in 2025.

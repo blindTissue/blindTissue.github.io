@@ -3,8 +3,9 @@ layout: page
 permalink: /webapps/
 title: web apps
 description: Simple web applications and interactive tools.
-nav: true
+nav: false
 nav_order: 7
+published: false
 ---
 
 ---

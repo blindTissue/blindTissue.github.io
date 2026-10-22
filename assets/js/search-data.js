@@ -30,13 +30,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "nav-web-apps",
-          title: "web apps",
-          description: "Simple web applications and interactive tools.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/webapps/";
-          },
         },{id: "post-old-nlp-paper-reviews",
         
           title: "Old NLP Paper Reviews",
@@ -224,12 +217,7 @@ ninja.data = [{
             window.location.href = "/blog/2024/perplexity-and-bounds/";
           
         },
-      },{id: "books-the-godfather",
-          title: 'The Godfather',
-          description: "",
-          section: "Books",handler: () => {
-              window.location.href = "/books/the_godfather/";
-            },},{id: "news-graduated-with-bs-in-computer-science-and-applied-mathematics-and-statistics-from-jhu",
+      },{id: "news-graduated-with-bs-in-computer-science-and-applied-mathematics-and-statistics-from-jhu",
           title: 'Graduated with BS in Computer Science and Applied Mathematics and Statistics from JHU....',
           description: "",
           section: "News",},{id: "news-graduated-with-masters-in-computer-science-from-johns-hopkins-university",
@@ -241,6 +229,12 @@ ninja.data = [{
           section: "News",},{id: "news-cardbiomedbench-a-benchmark-for-evaluating-large-language-model-performance-in-biomedical-research-has-been-accepted-to-the-lancet-digital-health",
           title: 'CARDBiomedBench: A Benchmark for Evaluating Large Language Model Performance in Biomedical Research​ has...',
           description: "",
+          section: "News",},{id: "news-biomedsql-text-to-sql-for-scientific-reasoning-on-biomedical-knowledge-bases-has-been-accepted-to-colm-2026",
+          title: 'BiomedSQL: Text-to-SQL for Scientific Reasoning on Biomedical Knowledge Bases has been accepted to...',
+          description: "",
+          section: "News",},{id: "news-what-survives-eviction-information-recall-locality-in-transformer-kv-caches-has-been-accepted-to-tmlr",
+          title: 'What Survives Eviction? Information Recall Locality in Transformer KV Caches has been accepted...',
+          description: "",
           section: "News",},{id: "projects-is-procrustes-alignment-optimal",
           title: 'Is Procrustes Alignment Optimal?',
           description: "Is Procrustes Alignment Optimal?",
@@ -251,14 +245,14 @@ ninja.data = [{
         title: 'email',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
+          window.open("mailto:%71%77%65%34%30%33%32@%67%6D%61%69%6C.%63%6F%6D", "_blank");
         },
       },{
-        id: 'social-inspire',
-        title: 'Inspire HEP',
+        id: 'social-github',
+        title: 'GitHub',
         section: 'Socials',
         handler: () => {
-          window.open("https://inspirehep.net/authors/1010907", "_blank");
+          window.open("https://github.com/blindTissue", "_blank");
         },
       },{
         id: 'social-rss',
@@ -272,14 +266,7 @@ ninja.data = [{
         title: 'Google Scholar',
         section: 'Socials',
         handler: () => {
-          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
-        },
-      },{
-        id: 'social-custom_social',
-        title: 'Custom_social',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://www.alberteinstein.com/", "_blank");
+          window.open("https://scholar.google.com/citations?user=H2ResUgAAAAJ", "_blank");
         },
       },{
       id: 'light-theme',

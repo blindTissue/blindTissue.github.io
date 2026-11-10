@@ -1,3 +1,12 @@
+---
+layout: post
+title: Automating KV Cache Eviction Research with Agents (Part 1)
+date: 2026-11-10
+description: Setting up an arena where Claude Code and Codex agents compete to invent KV cache eviction methods.
+tags: LLM
+featured: True
+---
+
 # Premise
 
 Agents have become good at formulating research ideas {examples}. Scientific discovery agents work well in environments where (1) experiments are cheap, (2) feedback is trustworthy, and (3) the search space is rich enough to reward exploration.
@@ -38,7 +47,7 @@ These observations were all addressed in the experimental setup.
 | Convergence | We employed four agents from two different model families. We prompted the agents to start on different leaderboards. |
 | Shortcuts | The test set of the leaderboard was hidden to the agents. Also, we encorporated judges for evaluating agents' eviction methods. The judge reads the agent's tool-call log and flag rule violation. Furthermore, the agents do not have access to judge's reasoning to inhibit writeup-maxxing. |
 
-![Original research setup]({{ '/assets/img/automating_eviction_research_with_agents_part_1/research_setup.svg' | relative_url }})
+{% include figure.liquid loading="eager" path="assets/img/automating_eviction_research_with_agents_part_1/research_setup.svg" class="img-fluid rounded z-depth-1" %}
 
 The above image displays the structure of the automated research. Each agent has access to three leaderboards, and could submit an entry code and short explanation to each. Independent judges see the description and code, and return a score. Furthermore, a benchmark on a hidden test set is run. The leaderboard is updated with both benchmark and judge scores, and the agent is awarded points based on those scores. Below, we further describe the setup.
 

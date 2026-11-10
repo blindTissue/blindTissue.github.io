@@ -30,11 +30,11 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-automating-eviction-research-with-agents-part-1",
+        },{id: "post-automating-kv-cache-eviction-research-with-agents-part-1",
         
-          title: "Automating Eviction Research With Agents Part 1",
+          title: "Automating KV Cache Eviction Research with Agents (Part 1)",
         
-        description: "",
+        description: "Setting up an arena where Claude Code and Codex agents compete to invent KV cache eviction methods.",
         section: "Posts",
         handler: () => {
           

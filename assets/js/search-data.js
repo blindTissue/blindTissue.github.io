@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-old-nlp-paper-reviews",
+        },{id: "post-automating-eviction-research-with-agents-part-1",
+        
+          title: "Automating Eviction Research With Agents Part 1",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/automating-eviction-research-with-agents-part-1/";
+          
+        },
+      },{id: "post-old-nlp-paper-reviews",
         
           title: "Old NLP Paper Reviews",
         

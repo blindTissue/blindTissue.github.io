@@ -9,7 +9,7 @@ featured: True
 
 # Premise
 
-Agents have become good at formulating research ideas {examples}. Scientific discovery agents work well in environments where (1) experiments are cheap, (2) feedback is trustworthy, and (3) the search space is rich enough to reward exploration.
+Agents have become good at formulating and executing research ideas [ex](https://arxiv.org/abs/2504.08066)[am](https://arxiv.org/pdf/2502.18864)[pl](https://arxiv.org/abs/2610.18933)[es](https://arxiv.org/html/2611.08478v1). Scientific discovery agents work well in environments where (1) experiments are cheap, (2) feedback is trustworthy, and (3) the search space is rich enough to reward exploration.
 
 I saw KV cache eviction—the topic I had been working on for the better part of a year—as a prime target for scientific discovery agents. Papers report performance on popular evaluation datasets, and evaluations on a benchmark often take several of hours (Full evaluation suite does take week(s), but a fwe-hour signal is often good enough for determining method's success). Furthermore, the recent shift in released LLM architectures from GQA-based Transformers toward architectures that interleave SSM and attention layers suggests that there is ample room to experiment with new methods.
 
@@ -17,17 +17,15 @@ So I built a small arena, to test if automated KV eviction research was worth pu
 
 ## KV Cache Eviction
 
-{diagram for cache eviction}
-
 LLMs spanning long context is bottlenecked by KV cache, both in memory size, memory bendwidth required to compute attention. One method to reduce this bottleneck is KV eviction, evicting parts of context which are deemed less important in inference. There are mainly two different veins of eviction. (1). evicting entire chunks of KV cache, and (2). removing KV cache headwise. We focus on the second part.
 
 Eviction particularly works in three steps: prefill, evict, then decode. First, LLM prefills long context to obtain its KV cache. Then, the eviction method evicts caches based on its importance. The importance is usually some heuristics of the attention scores. After eviction, decode phase generates tokens. 
 
-The steps are also dependent on the eviction strategy. For example, a layerwise fixed budget strategy can encorporate eviction during prefill. Long reasoning generation can interweave eviction with decode, evicting when the cache budget is filled {citation}.
+The steps are also dependent on the eviction strategy. For example, a layerwise fixed budget strategy can encorporate eviction during prefill ([PyramidInfer](https://arxiv.org/abs/2405.12532); [CAKE](https://arxiv.org/abs/2503.12491)). Long reasoning generation can interweave eviction with decode, evicting when the cache budget is filled ([example](https://arxiv.org/abs/2505.24133)).
 
-Most eviction methods operate on a pure-attention transformers. However, recent public models are often built with interleaved ssm and attention. To adapt, we can employ the pure-attention eviction methods to the attnetion layer of the interleaved models. Results are mixed, with methods which work great on GQA showing middling performance.
+Most eviction methods operate on a pure-attention transformers. However, recent public models are often built with interleaved ssm and attention. To adapt, we can employ the pure-attention eviction methods to the attnetion layer of the interleaved models.
 
-Some studies find (as well as our experiments) that method's effectiveness is not directly translated between pure-attention and interleaved attention {citations}. Exploration in this problem thus seemed ample, perfect for agentice research.
+Some studies find (as well as our experiments) that method's effectiveness is not directly translated between pure-attention and interleaved attention ([1](https://arxiv.org/pdf/2609.27470) [2](https://arxiv.org/abs/2607.01299)). Exploration in this problem thus seemed ample, perfect for agentice research.
 
 ## Automated Research Setup
 
@@ -76,7 +74,7 @@ There are three leaderboards, each with a different setting. Each benchmark was 
 
 Accuracy and efficiency are the two parts of the benchmark score. Accuracy is normalized to the full cache on the same items and averaged over tasks and budgets. Efficiency terms are measured against full-cache runs. We measure peak KV memory, decode speed, compression overhead, and, on C, generated length.
 
-Before the research started, the agents set the weights. The four agents spent three rounds proposing, critiquing, and voting on the weights. I set the limits (accuracy >= 0.6, or 0.5 on C, memory + speed >= 0.15) and accepted the median vote. The votes were nearly unanimous. {link to the artifact}
+Before the research started, the agents set the weights. The four agents spent three rounds proposing, critiquing, and voting on the weights. I set the limits (accuracy >= 0.6, or 0.5 on C, memory + speed >= 0.15) and accepted the median vote. The votes were nearly unanimous ([link to discussion](https://claude.ai/artifact/AQnwS1f4jDjXq3iJJqHPfe))
 
 **Baselines**: Twelve published methods were reimplemented (with Claude Code) on the same method-harness interface. The methods were:
 

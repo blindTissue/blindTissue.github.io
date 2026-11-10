@@ -11,21 +11,21 @@ featured: True
 
 Agents have become good at formulating and executing research ideas [ex](https://arxiv.org/abs/2504.08066)[am](https://arxiv.org/pdf/2502.18864)[pl](https://arxiv.org/abs/2610.18933)[es](https://arxiv.org/html/2611.08478v1). Scientific discovery agents work well in environments where (1) experiments are cheap, (2) feedback is trustworthy, and (3) the search space is rich enough to reward exploration.
 
-I saw KV cache eviction—the topic I had been working on for the better part of a year—as a prime target for scientific discovery agents. Papers report performance on popular evaluation datasets, and evaluations on a benchmark often take several of hours (Full evaluation suite does take week(s), but a fwe-hour signal is often good enough for determining method's success). Furthermore, the recent shift in released LLM architectures from GQA-based Transformers toward architectures that interleave SSM and attention layers suggests that there is ample room to experiment with new methods.
+I saw KV cache eviction—the topic I had been working on for the better part of a year—as a prime target for scientific discovery agents. Papers report performance on popular evaluation datasets, and evaluations on a benchmark often take several hours (A full evaluation suite can take weeks, but a few-hour signal is often good enough for determining a method's success). Furthermore, the recent shift in released LLM architectures from GQA-based Transformers toward architectures that interleave SSM and attention layers suggests that there is ample room to experiment with new methods.
 
 So I built a small arena, to test if automated KV eviction research was worth pursuing. This post covers the first run. It includes how it was set up, what the agents made, and what broke.
 
 ## KV Cache Eviction
 
-LLMs spanning long context is bottlenecked by KV cache, both in memory size, memory bendwidth required to compute attention. One method to reduce this bottleneck is KV eviction, evicting parts of context which are deemed less important in inference. There are mainly two different veins of eviction. (1). evicting entire chunks of KV cache, and (2). removing KV cache headwise. We focus on the second part.
+LLMs spanning long context is bottlenecked by the KV cache, both in memory size, memory bendwidth required to compute attention. One method to reduce this bottleneck is KV eviction, evicting parts of context which are deemed less important in inference. There are mainly two different veins of eviction. (1). evicting entire chunks of KV cache, and (2). removing KV cache headwise. We focus on the second part.
 
-Eviction particularly works in three steps: prefill, evict, then decode. First, LLM prefills long context to obtain its KV cache. Then, the eviction method evicts caches based on its importance. The importance is usually some heuristics of the attention scores. After eviction, decode phase generates tokens. 
+Eviction particularly works in three steps: prefill, evict, then decode. First, an LLM prefills long context to obtain its KV cache. Then, the eviction method evicts caches based on its importance. The importance is usually some heuristics of the attention scores. After eviction, decode phase generates tokens. 
 
-The steps are also dependent on the eviction strategy. For example, a layerwise fixed budget strategy can encorporate eviction during prefill ([PyramidInfer](https://arxiv.org/abs/2405.12532); [CAKE](https://arxiv.org/abs/2503.12491)). Long reasoning generation can interweave eviction with decode, evicting when the cache budget is filled ([example](https://arxiv.org/abs/2505.24133)).
+The steps are also dependent on the eviction strategy. For example, a layerwise fixed budget strategy can incorporate eviction during prefill ([PyramidInfer](https://arxiv.org/abs/2405.12532); [CAKE](https://arxiv.org/abs/2503.12491)). Long reasoning generation can interweave eviction with decode, evicting when the cache budget is filled ([example](https://arxiv.org/abs/2505.24133)).
 
-Most eviction methods operate on a pure-attention transformers. However, recent public models are often built with interleaved ssm and attention. To adapt, we can employ the pure-attention eviction methods to the attnetion layer of the interleaved models.
+Most eviction methods operate on pure-attention transformers. However, recent public models are often built with interleaved ssm and attention. To adapt, we can apply the pure-attention eviction methods to the attnetion layer of the interleaved models.
 
-Some studies find (as well as our experiments) that method's effectiveness is not directly translated between pure-attention and interleaved attention ([1](https://arxiv.org/pdf/2609.27470) [2](https://arxiv.org/abs/2607.01299)). Exploration in this problem thus seemed ample, perfect for agentice research.
+Some studies find (as well as our experiments) that a method's effectiveness is not directly translated between pure-attention and interleaved attention ([1](https://arxiv.org/pdf/2609.27470) [2](https://arxiv.org/abs/2607.01299)). Exploration in this problem thus seemed ample, perfect for agentic research.
 
 ## Automated Research Setup
 
@@ -43,7 +43,7 @@ These observations were all addressed in the experimental setup.
 |---|---|
 | Vague goals | A fixed model, fixed benchmarks, fixed budgets and a numeric score on a public leaderboard. Models compete on a shared leaderboard to maximize their scores. |
 | Convergence | We employed four agents from two different model families. We prompted the agents to start on different leaderboards. |
-| Shortcuts | The test set of the leaderboard was hidden to the agents. Also, we encorporated judges for evaluating agents' eviction methods. The judge reads the agent's tool-call log and flag rule violation. Furthermore, the agents do not have access to judge's reasoning to inhibit writeup-maxxing. |
+| Shortcuts | The test set of the leaderboard was hidden to the agents. Also, we incorporated judges for evaluating agents' eviction methods. The judge reads the agent's tool-call log and flag rule violations. Furthermore, the agents do not have access to the judge's reasoning to inhibit writeup-maxxing. |
 
 {% include figure.liquid loading="eager" path="assets/img/automating_eviction_research_with_agents_part_1/research_setup.svg" class="img-fluid rounded z-depth-1" %}
 
@@ -90,7 +90,7 @@ Random eviction and the full cache were also run on every board. The best method
 
 ### Judge
 
-Every submission was reviewed by an Opus 5.5 and a Sol 6.1 judge. Each read the agent's submission bundle and had access to the web. The judges also had access to earlier submissions and the agent's tool-call log. Web search was mandatory, as the judges had to look for prior work and check every citation.
+Every submission was reviewed by one Opus 5.5 and one Sol 6.1 judge. Each read the agent's submission bundle and had access to the web. The judges also had access to earlier submissions and the agent's tool-call log. Web search was mandatory, as the judges had to look for prior work and check every citation.
 
 The judges scored novelty (0-5), effectiveness (0-5), and soundness (0-3), worth up to 30 points. The judges could also raise the flags `MISSTATED_METHOD`, `UNDISCLOSED_PRIOR_ART`, `FABRICATED_EVIDENCE`, `RULE_VIOLATION`, and `MISSING_ATTRIBUTION`. A flag zeroed the submission and cost 20 points. If the two runs disagreed by more than one point, a third run broke the tie, using the model family that had not written the submission.
 

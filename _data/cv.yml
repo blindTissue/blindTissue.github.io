@@ -48,7 +48,7 @@
       description:
         - Entropy triggered sparse attention cache rebuild for accurate responses.
     - title: "Recovering Collapsed Language Models in Weight Space Without External Data"
-      institution: Submitted to EACL 2027
+      institution: Accepted to EACL 2027 Main
       year: 2026
       description:
         - Experimented multi-model feedback loop and confirmed that model collapse appears in this scenario.

@@ -16,13 +16,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "nav-publications",
-          title: "publications",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/publications/";
-          },
         },{id: "nav-cv",
           title: "CV",
           description: "",
@@ -245,6 +238,9 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "news-what-survives-eviction-information-recall-locality-in-transformer-kv-caches-has-been-accepted-to-tmlr",
           title: 'What Survives Eviction? Information Recall Locality in Transformer KV Caches has been accepted...',
+          description: "",
+          section: "News",},{id: "news-recovering-collapsed-language-models-in-weight-space-without-external-data-has-been-accepted-to-eacl-2027-main",
+          title: 'Recovering Collapsed Language Models in Weight Space Without External Data has been accepted...',
           description: "",
           section: "News",},{id: "projects-is-procrustes-alignment-optimal",
           title: 'Is Procrustes Alignment Optimal?',
